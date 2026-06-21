@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+      rel="stylesheet"
+    />
+    <title>أيتامنا — منصة وطنية لخدمات ومبادرات الأيتام</title>
+  </head>
+  <body class="bg-base-100 text-base-content">
+    <!-- ============== Header / Navbar ============== -->
+
+    <!-- bg-base-100/95 -->
+    <header class="sticky top-0 z-50 border-b border-base-300 backdrop-blur">
+      <div
+        class="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4"
+      >
+        <div class="flex items-center gap-2 shrink-0 items-center">
+          <a href="#">
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="Logo"
+              class="h-9 w-auto"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="/src/assets/images/logo2.svg"
+              alt="Logo"
+              class="h-9 w-auto"
+            />
+          </a>
+        </div>
+        <!-- Nav links -->
+        <nav class="hidden items-center gap-1 lg:flex">
+          <a href="#" class="header-link">الرئيسية</a>
+          <a href="#" class="header-link">من نحن</a>
+
+          <!-- خدماتنا dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="services-dropdown"
+              type="button"
+              class="dropdown-toggle inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-brand-navy hover:bg-base-200"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="خدماتنا"
+            >
+              خدماتنا
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="services-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >موقع جمع التبرعات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >مكتبة عناية</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >الدورات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >المبادرات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >الشراكات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >أيتامنا مطمئنون</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="header-link">المبادرات</a>
+          <a href="#" class="header-link">الجمعيات</a>
+        </nav>
+
+        <!-- Auth buttons -->
+        <div class="flex items-center gap-2">
+          <a href="#" class="header-link">تسجيل دخول</a>
+          <a href="#" class="primary-btn">تسجيل جمعية</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============== Hero ============== -->
+      <section class="gradient-bg m-3 rounded-2xl">
+        <div class="mx-auto max-w-[1200px] px-4 py-36 text-center">
+          <h1 class="mx-auto max-w-3xl heading-1">
+            منصة وطنية تجمع خدمات ومبادرات الأيتام في السعودية
+          </h1>
+          <p class="mx-auto mt-5 max-w-2xl text-base text-gray-500 md:text-lg">
+            تعزيزًا للجمعيات المباركة، نوفّر المبادرات والبرامج والموارد المخصصة
+            لدعم الأيتام في جميع مناطق المملكة
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <button class="secondary-btn py-4 px-8">تصفّح الجمعيات</button>
+            <button class="primary-btn py-4 px-8">تسجيل الجمعيات</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Associations by region (map) ============== -->
+      <section class="mx-auto max-w-[1200px] px-4 py-16">
+        <div class="mb-10 text-center">
+          <h2 class="heading-2">تصفّح الجمعيات في منطقتك</h2>
+          <p class="mt-3 paragraph">
+            اضغط على الخريطة لاستكشاف الجمعيات المتاحة في مدينتك والتعرّف على
+            خدماتها
+          </p>
+        </div>
+        <div class="grid items-center gap-8 md:grid-cols-2">
+          <!-- Map placeholder -->
+          <div
+            class="grid aspect-4/3 place-items-center rounded-box bg-gradient-to-br from-brand-sky to-brand-green/80 text-white/90"
+          >
+            <svg class="size-24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
+              />
+            </svg>
+          </div>
+          <!-- Region panel -->
+          <div
+            class="card rounded-box border border-base-300 bg-base-100 p-5 shadow-sm"
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <span class="font-bold text-brand-navy">منطقة الرياض</span>
+              <button class="btn btn-text btn-sm text-primary">
+                تغيير المنطقة
+              </button>
+            </div>
+            <ul class="divide-y divide-base-300">
+              <li class="flex items-center justify-between gap-3 py-3">
+                <div class="flex items-center gap-3">
+                  <span class="size-10 shrink-0 rounded-lg bg-base-200"></span>
+                  <div>
+                    <p class="text-sm font-bold text-brand-navy">
+                      جمعية إنسان للرعاية
+                    </p>
+                    <p class="text-xs text-gray-500">رعاية الأيتام</p>
+                  </div>
+                </div>
+                <a href="#" class="text-sm font-medium text-primary"
+                  >اعرف أكثر</a
+                >
+              </li>
+              <li class="flex items-center justify-between gap-3 py-3">
+                <div class="flex items-center gap-3">
+                  <span class="size-10 shrink-0 rounded-lg bg-base-200"></span>
+                  <div>
+                    <p class="text-sm font-bold text-brand-navy">
+                      الجمعية الخيرية لرعاية الأيتام
+                    </p>
+                    <p class="text-xs text-gray-500">رعاية الأيتام</p>
+                  </div>
+                </div>
+                <a href="#" class="text-sm font-medium text-primary"
+                  >اعرف أكثر</a
+                >
+              </li>
+              <li class="flex items-center justify-between gap-3 py-3">
+                <div class="flex items-center gap-3">
+                  <span class="size-10 shrink-0 rounded-lg bg-base-200"></span>
+                  <div>
+                    <p class="text-sm font-bold text-brand-navy">
+                      جمعية سند الخيرية لرعاية الأيتام
+                    </p>
+                    <p class="text-xs text-gray-500">رعاية الأيتام</p>
+                  </div>
+                </div>
+                <a href="#" class="text-sm font-medium text-primary"
+                  >اعرف أكثر</a
+                >
+              </li>
+              <li class="flex items-center justify-between gap-3 py-3">
+                <div class="flex items-center gap-3">
+                  <span class="size-10 shrink-0 rounded-lg bg-base-200"></span>
+                  <div>
+                    <p class="text-sm font-bold text-brand-navy">
+                      المجلس الفرعي التخصصي لجمعيات الأيتام
+                    </p>
+                    <p class="text-xs text-gray-500">رعاية الأيتام</p>
+                  </div>
+                </div>
+                <a href="#" class="text-sm font-medium text-primary"
+                  >اعرف أكثر</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Offers & discounts ============== -->
+      <section>
+        <div class="mx-auto max-w-[1200px] px-4 py-16">
+          <div class="mb-10 text-center">
+            <h2 class="heading-2">العروض والخصومات المتاحة لك</h2>
+            <p class="mt-3 paragraph">
+              اختر العروض من المتاجر التجارية التي تجهها
+            </p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Offer card -->
+            <div class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <a href="#" class="outline-btn">
+              عرض الكل
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Events ============== -->
+      <section class="mx-auto max-w-[1200px] px-4 py-16">
+        <div class="mb-10 text-center">
+          <h2 class="text-3xl font-bold text-brand-navy">فعاليات الجمعيات</h2>
+          <p class="mt-3 text-gray-500">
+            اطّلع على الفعاليات من الجمعيات التجارية التي تجهها
+          </p>
+        </div>
+        <div class="mb-6 flex flex-wrap items-center justify-center gap-2">
+          <button class="btn btn-primary btn-sm">بحث</button>
+          <button class="btn btn-soft btn-sm">أحدث الفعاليات</button>
+          <button class="btn btn-soft btn-sm">الأقرب موعدًا</button>
+          <button class="btn btn-soft btn-sm">حسب المنطقة</button>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Calendar -->
+          <div
+            class="card rounded-box border border-base-300 bg-base-100 p-5 shadow-sm"
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <button
+                class="grid size-7 place-items-center rounded-md hover:bg-base-200"
+                aria-label="السابق"
+              >
+                ‹
+              </button>
+              <span class="font-bold text-brand-navy">مارس 2026</span>
+              <button
+                class="grid size-7 place-items-center rounded-md hover:bg-base-200"
+                aria-label="التالي"
+              >
+                ›
+              </button>
+            </div>
+            <div
+              class="grid grid-cols-7 gap-1 text-center text-xs text-gray-400"
+            >
+              <span>أحد</span><span>إثن</span><span>ثلا</span><span>أرب</span
+              ><span>خمي</span><span>جمع</span><span>سبت</span>
+            </div>
+            <div class="mt-2 grid grid-cols-7 gap-1 text-center text-sm">
+              <span class="py-1.5 text-gray-300">22</span
+              ><span class="py-1.5 text-gray-300">23</span
+              ><span class="py-1.5 text-gray-300">24</span
+              ><span class="py-1.5 text-gray-300">25</span
+              ><span class="py-1.5 text-gray-300">26</span
+              ><span class="py-1.5 text-gray-300">27</span
+              ><span class="py-1.5">1</span> <span class="py-1.5">2</span
+              ><span class="py-1.5">3</span><span class="py-1.5">4</span
+              ><span class="py-1.5">5</span><span class="py-1.5">6</span
+              ><span class="py-1.5">7</span><span class="py-1.5">8</span>
+              <span class="py-1.5">9</span><span class="py-1.5">10</span
+              ><span class="grid place-items-center"
+                ><span
+                  class="grid size-7 place-items-center rounded-full bg-primary text-white"
+                  >11</span
+                ></span
+              ><span class="py-1.5">12</span><span class="py-1.5">13</span
+              ><span class="py-1.5">14</span><span class="py-1.5">15</span>
+              <span class="py-1.5">16</span><span class="py-1.5">17</span
+              ><span class="py-1.5">18</span><span class="py-1.5">19</span
+              ><span class="py-1.5">20</span><span class="py-1.5">21</span
+              ><span class="py-1.5">22</span> <span class="py-1.5">23</span
+              ><span class="py-1.5">24</span><span class="py-1.5">25</span
+              ><span class="py-1.5">26</span><span class="py-1.5">27</span
+              ><span class="py-1.5">28</span><span class="py-1.5">29</span>
+            </div>
+          </div>
+          <!-- Event cards -->
+          <article
+            class="card overflow-hidden rounded-box border border-base-300 bg-base-100 shadow-sm"
+          >
+            <div class="aspect-video bg-base-200"></div>
+            <div class="p-5">
+              <p class="text-xs text-gray-400">11 مارس 2026</p>
+              <h3 class="mt-2 font-bold text-brand-navy">
+                فعالية بين الجمعيات الخيرية لرعاية الأيتام
+              </h3>
+              <p class="mt-2 text-sm text-gray-500">
+                ملتقى يجمع الجمعيات لتبادل الخبرات وتعزيز جودة الخدمات المقدّمة
+                للأيتام.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-primary"
+                >تفاصيل أكثر</a
+              >
+            </div>
+          </article>
+          <article
+            class="card overflow-hidden rounded-box border border-base-300 bg-base-100 shadow-sm"
+          >
+            <div class="aspect-video bg-base-200"></div>
+            <div class="p-5">
+              <p class="text-xs text-gray-400">15 مارس 2026</p>
+              <h3 class="mt-2 font-bold text-brand-navy">
+                عزّنا بأصالتنا — يوم التأسيس
+              </h3>
+              <p class="mt-2 text-sm text-gray-500">
+                فعالية وطنية للاحتفاء بيوم التأسيس وإبراز الموروث الثقافي
+                بمشاركة الأيتام.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-primary"
+                >تفاصيل أكثر</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============== News ============== -->
+      <section>
+        <div class="mx-auto max-w-[1200px] px-4 py-16">
+          <div class="mb-10 text-center">
+            <h2 class="heading-2">آخر الأخبار</h2>
+            <p class="mt-3 paragraph">
+              اطّلع على أحدث المستجدّات والأخبار المتعلّقة بمنصة أيتامنا
+              وأنشطتها
+            </p>
+          </div>
+
+          <div class="mx-auto max-w-7xl p-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+              <!-- LEFT BIG CARD -->
+              <div class="flex flex-col main-card overflow-hidden h-full">
+                <div class="w-full">
+                  <img
+                    src="/src/assets/images/news1.jpg"
+                    alt="news"
+                    class="w-full h-[320px] object-cover"
+                  />
+                </div>
+
+                <div class="p-6 flex flex-col justify-between flex-1">
+                  <div>
+                    <span class="text-xs text-gray-400 font-medium block">
+                      <i class="fa-regular fa-calendar-days"></i> 22 فبراير 2026
+                    </span>
+
+                    <a
+                      href=""
+                      class="heading-5 block mt-3 hover:text-brand-green transition"
+                    >
+                      إطلاق برنامج دعم تعليمي للأيتام في عدد من مناطق المملكة
+                    </a>
+
+                    <p class="paragraph text-sm mt-2">
+                      أطلقت منصة أيتامنا برنامجًا تعليميًا جديدًا بالتعاون مع
+                      عدد من الجمعيات، بهدف دعم المسار التعليمي للأيتام وتعزيز
+                      فرصهم الأكاديمية.
+                    </p>
+                  </div>
+
+                  <a
+                    href="#"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green mt-4 transition"
+                  >
+                    تفاصيل أكثر <i class="fa-solid fa-angle-left"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- RIGHT LIST -->
+              <div class="flex flex-col gap-4 h-full">
+                <!-- CARD -->
+                <div class="flex main-card overflow-hidden flex-1">
+                  <img
+                    src="/src/assets/images/news1.jpg"
+                    class="w-40 h-full object-cover flex-shrink-0"
+                    alt=""
+                  />
+                  <div class="p-3 flex flex-col justify-evenly">
+                    <div>
+                      <span class="text-xs text-gray-400"
+                        ><i class="fa-regular fa-calendar-days"></i> 22 فبراير
+                        2026</span
+                      >
+                      <a
+                        href=""
+                        class="heading-5 block mt-2 hover:text-brand-green transition"
+                      >
+                        إطلاق برنامج دعم تعليمي للأيتام
+                      </a>
+                    </div>
+                    <a
+                      href="#"
+                      class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green mt-4 transition"
+                    >
+                      تفاصيل أكثر <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="flex main-card overflow-hidden flex-1">
+                  <img
+                    src="/src/assets/images/news1.jpg"
+                    class="w-40 h-full object-cover flex-shrink-0"
+                    alt=""
+                  />
+                  <div class="p-3 flex flex-col justify-evenly">
+                    <div>
+                      <span class="text-xs text-gray-400"
+                        ><i class="fa-regular fa-calendar-days"></i> 22 فبراير
+                        2026</span
+                      >
+                      <a
+                        href=""
+                        class="heading-5 block mt-2 hover:text-brand-green transition"
+                      >
+                        إطلاق برنامج دعم تعليمي للأيتام
+                      </a>
+                    </div>
+                    <a
+                      href="#"
+                      class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green mt-4 transition"
+                    >
+                      تفاصيل أكثر <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="flex main-card overflow-hidden flex-1">
+                  <img
+                    src="/src/assets/images/news1.jpg"
+                    class="w-40 h-full object-cover flex-shrink-0"
+                    alt=""
+                  />
+                  <div class="p-3 flex flex-col justify-evenly">
+                    <div>
+                      <span class="text-xs text-gray-400"
+                        ><i class="fa-regular fa-calendar-days"></i> 22 فبراير
+                        2026</span
+                      >
+                      <a
+                        href=""
+                        class="heading-5 block mt-2 hover:text-brand-green transition"
+                      >
+                        إطلاق برنامج دعم تعليمي للأيتام
+                      </a>
+                    </div>
+                    <a
+                      href="#"
+                      class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-green mt-4 transition"
+                    >
+                      تفاصيل أكثر <i class="fa-solid fa-angle-left"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Training courses ============== -->
+      <section class="gradient-bg m-3 rounded-2xl">
+        <div class="mx-auto max-w-[1200px] px-4 py-16">
+          <div class="mb-10 text-center">
+            <h2 class="heading-2">الدورات التدريبية</h2>
+            <p class="paragraph mt-3">
+              اطّلع على الدورات والبرامج التدريبية والتوعوية المخصّصة للعاملين
+              والمهتمّين بمجال رعاية الأيتام
+            </p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="main-card overflow-hidden">
+              <img
+                src="/src/assets/images/news2.jpg"
+                alt="دورة تدريبية"
+                class="w-full h-60 object-cover"
+              />
+
+              <div class="p-5">
+                <div class="flex gap-3">
+                  <p class="text-xs text-gray-400">
+                    <i class="fa-solid fa-location-dot"></i> الرياض
+                  </p>
+                  <p class="text-xs text-gray-400">
+                    <i class="fa-regular fa-calendar-days"></i> 10 مارس 2026
+                  </p>
+                </div>
+
+                <h3 class="mt-2 heading-5">
+                  إطلاق برنامج دعم تعليمي للأيتام في عدد من مناطق المملكة
+                </h3>
+                <p class="mt-2 paragraph text-sm">
+                  دورة تدريبية تهدف إلى تطوير المهارات وتعزيز جودة الخدمات
+                  المقدّمة للأيتام.
+                </p>
+                <a href="#" class="mt-4 block primary-btn text-center">
+                  سجّل الآن</a
+                >
+              </div>
+            </article>
+            <article class="main-card overflow-hidden">
+              <img
+                src="/src/assets/images/news2.jpg"
+                alt="دورة تدريبية"
+                class="w-full h-60 object-cover"
+              />
+
+              <div class="p-5">
+                <div class="flex gap-3">
+                  <p class="text-xs text-gray-400">
+                    <i class="fa-solid fa-location-dot"></i> الرياض
+                  </p>
+                  <p class="text-xs text-gray-400">
+                    <i class="fa-regular fa-calendar-days"></i> 10 مارس 2026
+                  </p>
+                </div>
+
+                <h3 class="mt-2 heading-5">
+                  إطلاق برنامج دعم تعليمي للأيتام في عدد من مناطق المملكة
+                </h3>
+                <p class="mt-2 paragraph text-sm">
+                  دورة تدريبية تهدف إلى تطوير المهارات وتعزيز جودة الخدمات
+                  المقدّمة للأيتام.
+                </p>
+                <a href="#" class="mt-4 block primary-btn text-center">
+                  سجّل الآن</a
+                >
+              </div>
+            </article>
+            <article class="main-card overflow-hidden">
+              <img
+                src="/src/assets/images/news2.jpg"
+                alt="دورة تدريبية"
+                class="w-full h-60 object-cover"
+              />
+
+              <div class="p-5">
+                <div class="flex gap-3">
+                  <p class="text-xs text-gray-400">
+                    <i class="fa-solid fa-location-dot"></i> الرياض
+                  </p>
+                  <p class="text-xs text-gray-400">
+                    <i class="fa-regular fa-calendar-days"></i> 10 مارس 2026
+                  </p>
+                </div>
+
+                <h3 class="mt-2 heading-5">
+                  إطلاق برنامج دعم تعليمي للأيتام في عدد من مناطق المملكة
+                </h3>
+                <p class="mt-2 paragraph text-sm">
+                  دورة تدريبية تهدف إلى تطوير المهارات وتعزيز جودة الخدمات
+                  المقدّمة للأيتام.
+                </p>
+                <a href="#" class="mt-4 block primary-btn text-center">
+                  سجّل الآن</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Stats ============== -->
+      <section>
+        <div class="mx-auto max-w-[1200px] px-4 py-16">
+          <div class="mb-12 text-center">
+            <h2 class="heading-2">أيتامنا بالأرقام</h2>
+            <p class="mt-3 paragraph">
+              تعكس هذه الأرقام حجم التغطية والخدمات التي تقدمها منصة أيتامنا
+              لدعم وتنظيم العمل المتعلق برعاية الأيتام في مختلف مناطق المملكة.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-5">
+            <div class="flex flex-col items-center gap-2 number-card relative">
+              <img src="/src/assets/images/icon1.svg" />
+              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <p class="paragraph text-sm font-medium m-0">
+                المستفيدين من برنامج التأهيل لسوق العمل
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2 number-card relative">
+              <img src="/src/assets/images/icon2.svg" />
+              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <p class="paragraph text-sm font-medium m-0">
+                المستفيدين من الكفالة الصحية
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2 number-card relative">
+              <img src="/src/assets/images/icon3.svg" />
+              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <p class="paragraph text-sm font-medium m-0">
+                المستفيدين من الدورات التطويرية
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2 number-card relative">
+              <img src="/src/assets/images/icon4.svg" />
+              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <p class="paragraph text-sm font-medium m-0">يتيم ويتيمة</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 number-card relative">
+              <img src="/src/assets/images/icon5.svg" />
+              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <p class="paragraph text-sm font-medium m-0">متطوع ومتطوعة</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== App promo banner ============== -->
+
+      <section class="gradient-bg-2 m-3 rounded-2xl">
+        <div class="mx-auto max-w-[1200px] px-4">
+          <div class="grid items-center gap-8 px-8 md:grid-cols-2 md:px-12">
+            <div class="text-white">
+              <h2 class="heading-2 text-white">
+                خدمة استشارية مرخّصة على يد مختصين
+              </h2>
+              <p class="mt-3 paragraph text-white/85 text-base">
+                خدمات نفسية واجتماعية بين يديك بسهولة وموثوقية عالية عبر تطبيق
+                أيتامنا.
+              </p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="#" class="">
+                  <img
+                    src="/src/assets/images/google-app.svg"
+                    alt="Google Play"
+                    class="h-12"
+                  />
+                </a>
+
+                <a href="#" class=""
+                  ><img
+                    src="/src/assets/images/apple-app.svg"
+                    alt="Google Play"
+                    class="h-12"
+                /></a>
+              </div>
+            </div>
+            <div class="flex justify-center md:justify-end">
+              <img
+                src="/src/assets/images/phone-app.svg"
+                alt="تطبيق أيتامنا"
+                class="w-80 md:w-[400px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Articles ============== -->
+      <section class="mx-auto max-w-[1200px] px-4 py-16">
+        <div class="mb-10 text-center">
+          <h2 class="heading-2">مقالات أيتامنا</h2>
+          <p class="mt-3 paragraph">
+            مقالات ومحتوى معرفي يناقش قضايا رعاية الأيتام ويستعرض التجارب
+            والممارسات التي تسهم في تطوير العمل الاجتماعي
+          </p>
+        </div>
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="مقال"
+                    class="w-full h-60 object-cover"
+                  />
+                  <div class="p-5">
+                    <a class="heading-5" href="#">
+                      أهمية التكامل بين الجمعيات في رعاية الأيتام
+                    </a>
+                    <a
+                      href="#"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+              </li>
+              <li class="splide__slide">
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="مقال"
+                    class="w-full h-60 object-cover"
+                  />
+                  <div class="p-5">
+                    <a class="heading-5" href="#">
+                      أهمية التكامل بين الجمعيات في رعاية الأيتام
+                    </a>
+                    <a
+                      href="#"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+              </li>
+              <li class="splide__slide">
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="مقال"
+                    class="w-full h-60 object-cover"
+                  />
+                  <div class="p-5">
+                    <a class="heading-5" href="#">
+                      أهمية التكامل بين الجمعيات في رعاية الأيتام
+                    </a>
+                    <a
+                      href="#"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">Prev</button>
+            <button class="splide__arrow splide__arrow--next">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Associations directory ============== -->
+      <section class="mx-auto max-w-[1200px] px-4 py-16">
+        <div class="mb-10 text-center">
+          <h2 class="heading-2">دليل جمعيات الأيتام</h2>
+          <p class="mt-3 paragraph">
+            تصفّح دليل الجمعيات المعتمدة في رعاية الأيتام في مختلف مناطق المملكة
+            وتعرّف على خدماتها وطرق التواصل معها
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-5 md:grid-cols-5">
+          <div>
+            <div class="rounded-box border border-base-300 bg-base-100 p-10">
+              <img
+                src="/src/assets/images/image 3.svg"
+                alt="شعار الجمعية"
+                class="mx-auto"
+              />
+            </div>
+            <p class="mt-3 paragraph text-sm text-center">مؤسسة سعيد الخيرية</p>
+          </div>
+          <div>
+            <div class="rounded-box border border-base-300 bg-base-100 p-10">
+              <img
+                src="/src/assets/images/image 3.svg"
+                alt="شعار الجمعية"
+                class="mx-auto"
+              />
+            </div>
+            <p class="mt-3 paragraph text-sm text-center">مؤسسة سعيد الخيرية</p>
+          </div>
+          <div>
+            <div class="rounded-box border border-base-300 bg-base-100 p-10">
+              <img
+                src="/src/assets/images/image 3.svg"
+                alt="شعار الجمعية"
+                class="mx-auto"
+              />
+            </div>
+            <p class="mt-3 paragraph text-sm text-center">مؤسسة سعيد الخيرية</p>
+          </div>
+          <div>
+            <div class="rounded-box border border-base-300 bg-base-100 p-10">
+              <img
+                src="/src/assets/images/image 3.svg"
+                alt="شعار الجمعية"
+                class="mx-auto"
+              />
+            </div>
+            <p class="mt-3 paragraph text-sm text-center">مؤسسة سعيد الخيرية</p>
+          </div>
+          <div>
+            <div class="rounded-box border border-base-300 bg-base-100 p-10">
+              <img
+                src="/src/assets/images/image 3.svg"
+                alt="شعار الجمعية"
+                class="mx-auto"
+              />
+            </div>
+            <p class="mt-3 paragraph text-sm text-center">مؤسسة سعيد الخيرية</p>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="#" class="outline-btn">
+            عرض الكل
+            <i class="fa-solid fa-angle-left"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============== Footer ============== -->
+    <footer class="gradient-bg-2 m-3 rounded-2xl">
+      <div class="mx-auto max-w-[1200px] px-4 pt-14 pb-6">
+        <div class="grid gap-8 md:grid-cols-7">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-2">
+              <img
+                src="/src/assets/images/logo-w.svg"
+                alt="شعار أيتامنا"
+                class="size-28"
+              />
+            </div>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">الرئيسية</a></li>
+              <li><a href="#" class="footer-link">من نحن</a></li>
+              <li><a href="#" class="footer-link">خدماتنا</a></li>
+              <li><a href="#" class="footer-link">المعرفة</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">دليل الجمعيات</a></li>
+              <li><a href="#" class="footer-link">دليل المانجين</a></li>
+              <li><a href="#" class="footer-link">المقالات</a></li>
+              <li><a href="#" class="footer-link">الدورات</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">الأخبار</a></li>
+              <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ اﻟﺼﻮر </a></li>
+              <li><a href="#" class="footer-link">دﻟﻴﻞ ﺟﻮاﺋﺰ اﻟﺘﻤﻴﺰ</a></li>
+              <li><a href="#" class="footer-link">الدورات</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="footer-link">إﺻﺪارات اﺳﺘﺮاﺗﻴﺠﻴﺔ رﺷﺪ</a>
+              </li>
+              <li><a href="#" class="footer-link">ﻣﻮﻗﻊ ﺟﻤﻊ اﻟﺘﺒﺮﻋﺎت</a></li>
+              <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ ﻋﻨﺎﻳﺔ</a></li>
+              <li><a href="#" class="footer-link">اﻟﺸﺮاﻛﺎت</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">أيتامنا مطمئنون</a></li>
+              <li>
+                <a href="#" class="footer-link">اﻟﺘﻘﺮﻳﺮ اﻟﻤﺸﺘﺮك ﻟﻠﺠﻤﻌﻴﺎت </a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">ﺧﺮﻳﻄﺔ اﻟﻤﻤﻠﻜﺔ اﻟﺤﺮارﻳﺔ </a>
+              </li>
+              <li><a href="#" class="footer-link">الوظائف</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">سياسة الخصوصية</a></li>
+              <li><a href="#" class="footer-link">الشروط والأحكام</a></li>
+              <li><a href="#" class="footer-link">الأسئلة الشائعة</a></li>
+              <li><a href="#" class="footer-link">تواصل معنا</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-5 px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-white text-sm"
+        >
+          <!-- Copyright -->
+          <p class="font-medium">جميع الحقوق محفوظة 2026</p>
+
+          <!-- Center Text -->
+          <p class="text-center">
+            تم التطوير بواسطة المجلس الفرعي التخصصي لجمعيات الأيتام.
+          </p>
+
+          <!-- Social -->
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-linkedin-in text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-youtube text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c150b48bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
