@@ -25,6 +25,39 @@ if (siteHeader) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
+// قائمة الموبايل: فتح/إغلاق الـ drawer المنزلق
+const drawer = document.getElementById("mobile-drawer");
+const drawerOverlay = document.getElementById("drawer-overlay");
+const menuOpenBtn = document.getElementById("menu-open");
+const menuCloseBtn = document.getElementById("menu-close");
+
+if (drawer && drawerOverlay) {
+  const openDrawer = () => {
+    drawer.classList.add("is-open");
+    drawerOverlay.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    if (menuOpenBtn) menuOpenBtn.setAttribute("aria-expanded", "true");
+  };
+  const closeDrawer = () => {
+    drawer.classList.remove("is-open");
+    drawerOverlay.classList.add("hidden");
+    document.body.style.overflow = "";
+    if (menuOpenBtn) menuOpenBtn.setAttribute("aria-expanded", "false");
+  };
+
+  if (menuOpenBtn) menuOpenBtn.addEventListener("click", openDrawer);
+  if (menuCloseBtn) menuCloseBtn.addEventListener("click", closeDrawer);
+  drawerOverlay.addEventListener("click", closeDrawer);
+  // إغلاق القائمة عند الضغط على أي رابط بداخلها
+  drawer.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeDrawer);
+  });
+  // إغلاق بزر Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDrawer();
+  });
+}
+
 // التبويبات: تبديل المحتوى عند الضغط على كل تبويب
 const assocTabs = document.querySelectorAll(".assoc-tab");
 const assocPanels = document.querySelectorAll(".assoc-panel");

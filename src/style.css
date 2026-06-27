@@ -177,6 +177,15 @@
   padding-top: 0;
 }
 
+/* قائمة الموبايل المنزلقة من اليسار */
+.mobile-drawer {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
 /* الحاوية: على الموبايل تقسم العرض بالتساوي بين التبويبات */
 .assoc-tab {
   position: relative;
