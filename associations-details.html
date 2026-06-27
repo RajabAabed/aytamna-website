@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+      rel="stylesheet"
+    />
+    <title>تفاصيل جمعية — أيتامنا</title>
+  </head>
+  <body>
+    <!-- ============== Header / Navbar ============== -->
+    <header id="site-header" class="fixed-header fixed top-0 z-50 w-full">
+      <div
+        class="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 pt-5 box-content"
+      >
+        <div class="flex items-center gap-2 shrink-0 items-center">
+          <a href="index.html">
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="Logo"
+              class="h-9 w-auto"
+            />
+          </a>
+          <a href="index.html">
+            <img
+              src="/src/assets/images/logo2.svg"
+              alt="Logo"
+              class="h-9 w-auto"
+            />
+          </a>
+        </div>
+        <!-- Nav links -->
+        <nav class="hidden items-center gap-1 lg:flex">
+          <a href="index.html" class="header-link">الرئيسية</a>
+          <a href="about.html" class="header-link">من نحن</a>
+
+          <!-- خدماتنا dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="services-dropdown"
+              type="button"
+              class="dropdown-toggle inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-brand-navy hover:bg-base-200"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="خدماتنا"
+            >
+              خدماتنا
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="services-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >موقع جمع التبرعات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >مكتبة عناية</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >الدورات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >المبادرات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >الشراكات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >أيتامنا مطمئنون</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="header-link">المبادرات</a>
+          <a href="#" class="header-link">الجمعيات</a>
+        </nav>
+
+        <!-- Auth buttons -->
+        <div class="flex items-center gap-2">
+          <a href="#" class="header-link">تسجيل دخول</a>
+          <a href="#" class="primary-btn">تسجيل جمعية</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============== Association Hero Banner ============== -->
+      <section class="gradient-bg m-3 rounded-2xl">
+        <div
+          class="mx-auto max-w-[1200px] flex flex-col items-center justify-center gap-5 px-4 py-36 text-center"
+        >
+          <div
+            class="flex h-24 w-24 items-center justify-center rounded-2xl bg-base-100 shadow-sm ring-1 ring-brand-navy/10 md:h-28 md:w-28"
+          >
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="شعار أوقاف العرادي الخيرية"
+              class="h-14 w-auto md:h-16"
+            />
+          </div>
+          <h1 class="heading-2">أوقاف العرادي الخيرية</h1>
+          <p class="max-w-xl text-sm text-gray-500 md:text-base">
+            جهة وقفية رائدة تعمل على تمكين الأيتام ودعم المبادرات المجتمعية
+            المستدامة في مختلف مناطق المملكة.
+          </p>
+        </div>
+      </section>
+      <section class="mx-auto max-w-[1200px] px-4 pb-16 pt-10">
+        <!-- ============== Tabs Navigation ============== -->
+        <div>
+          <nav
+            class="assoc-tabs flex items-stretch border-b border-base-300 md:items-center md:justify-start md:gap-2"
+            role="tablist"
+            aria-label="أقسام الجمعية"
+          >
+            <button
+              type="button"
+              role="tab"
+              data-tab="#panel-about"
+              aria-selected="true"
+              class="assoc-tab is-active"
+            >
+              حول الجمعية
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-tab="#panel-initiatives"
+              aria-selected="false"
+              class="assoc-tab"
+            >
+              مبادرات الجمعية
+              <span class="assoc-tab-badge">3</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-tab="#panel-events"
+              aria-selected="false"
+              class="assoc-tab"
+            >
+              فعاليات الجمعية
+              <span class="assoc-tab-badge">6</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- ============== Tab Panels ============== -->
+        <div class="py-10">
+          <!-- ===== Panel: About ===== -->
+          <section id="panel-about" role="tabpanel" class="assoc-panel">
+            <!-- Intro -->
+            <h2 class="mb-5 heading-4">نبذة تعريفية</h2>
+            <p class="paragraph max-w-4xl text-justify text-base leading-loose">
+              تُعد أوقاف العرادي الخيرية إحدى الجهات الوقفية التي تسعى إلى
+              الإسهام في تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات الأثر
+              المستدام، وتركز الأوقاف على تمكين المشاريع النوعية، ودعم الجهات
+              العاملة في القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم
+              في تحسين جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ
+              مفهوم العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+
+            <!-- Contact info -->
+            <div
+              class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 border-y border-base-300 py-8 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              <div class="flex items-start gap-3">
+                <span
+                  class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+                >
+                  <i class="fa-solid fa-globe"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">الموقع الالكتروني</p>
+                  <a
+                    href="https://www.alaradi.org"
+                    class="text-sm font-medium text-brand-navy transition hover:text-brand-green"
+                    dir="ltr"
+                    >www.alaradi.org</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span
+                  class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">رقم الجوال</p>
+                  <a
+                    href="tel:+966509851236"
+                    class="text-sm font-medium text-brand-navy transition hover:text-brand-green"
+                    dir="ltr"
+                    >+966 50 985 1236</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span
+                  class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">الموقع الجغرافي</p>
+                  <p class="text-sm font-medium text-brand-navy">
+                    المملكة العربية السعودية
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span
+                  class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">الايميل</p>
+                  <a
+                    href="mailto:info@alaradi.org"
+                    class="text-sm font-medium text-brand-navy transition hover:text-brand-green"
+                    dir="ltr"
+                    >info@alaradi.org</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span
+                  class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">منصة إكس</p>
+                  <a
+                    href="#"
+                    class="text-sm font-medium text-brand-navy transition hover:text-brand-green"
+                    dir="ltr"
+                    >@alaradi</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span
+                  class="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">انستقرام</p>
+                  <a
+                    href="#"
+                    class="text-sm font-medium text-brand-navy transition hover:text-brand-green"
+                    dir="ltr"
+                    >@alaradi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Related associations -->
+            <div class="mt-12">
+              <div class="mb-8 flex items-center justify-between gap-4">
+                <h2 class="heading-3">جمعيات ذات صلة</h2>
+                <a
+                  href="associations.html"
+                  class="shrink-0 text-sm font-medium text-gray-400 transition-colors hover:text-brand-green"
+                  >شاهد الكل <i class="fa-solid fa-angle-left"></i
+                ></a>
+              </div>
+              <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- assoc card -->
+                <article class="main-card overflow-hidden p-6">
+                  <div
+                    class="flex h-28 items-center justify-center rounded-2xl bg-base-200"
+                  >
+                    <img
+                      src="/src/assets/images/logo.svg"
+                      alt="جمعية المستقبل"
+                      class="h-14 w-auto"
+                    />
+                  </div>
+                  <h3 class="mt-5 heading-5">
+                    جمعية المستقبل لرعاية الأيتام بالرياض
+                  </h3>
+                  <p class="mt-2 text-xs text-gray-400">
+                    <i class="fa-solid fa-location-dot"></i>
+                    السعودية — منطقة الرياض
+                  </p>
+                  <a
+                    href="associations-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </article>
+                <article class="main-card overflow-hidden p-6">
+                  <div
+                    class="flex h-28 items-center justify-center rounded-2xl bg-base-200"
+                  >
+                    <img
+                      src="/src/assets/images/logo.svg"
+                      alt="جمعية أيتام جدة"
+                      class="h-14 w-auto"
+                    />
+                  </div>
+                  <h3 class="mt-5 heading-5">
+                    جمعية أيتام جدة لرعاية الأيتام بجدة
+                  </h3>
+                  <p class="mt-2 text-xs text-gray-400">
+                    <i class="fa-solid fa-location-dot"></i>
+                    السعودية — منطقة مكة المكرمة
+                  </p>
+                  <a
+                    href="associations-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </article>
+                <article class="main-card overflow-hidden p-6">
+                  <div
+                    class="flex h-28 items-center justify-center rounded-2xl bg-base-200"
+                  >
+                    <img
+                      src="/src/assets/images/logo.svg"
+                      alt="جمعية رحمة"
+                      class="h-14 w-auto"
+                    />
+                  </div>
+                  <h3 class="mt-5 heading-5">
+                    جمعية رحمة لرعاية الأيتام بالعويقيلة
+                  </h3>
+                  <p class="mt-2 text-xs text-gray-400">
+                    <i class="fa-solid fa-location-dot"></i>
+                    السعودية — منطقة الحدود الشمالية
+                  </p>
+                  <a
+                    href="associations-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== Panel: Initiatives ===== -->
+          <section
+            id="panel-initiatives"
+            role="tabpanel"
+            class="assoc-panel hidden"
+          >
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <!-- card 1 -->
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news2.jpg"
+                  alt="مبادرة"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> الرياض
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                    </p>
+                  </div>
+                  <a
+                    class="mt-2 block heading-5"
+                    href="initiatives-details.html"
+                  >
+                    فعالية يوم التأسيس لتمكين الأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                    خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                  </p>
+                  <a
+                    href="initiatives-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <!-- card 2 -->
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news1.jpg"
+                  alt="مبادرة"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> جدة
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 16 مارس 2026
+                    </p>
+                  </div>
+                  <a
+                    class="mt-2 block heading-5"
+                    href="initiatives-details.html"
+                  >
+                    ملتقى المبادرات المجتمعية للأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    ملتقى يجمع الجمعيات والمبادرات المهتمة برعاية الأيتام لعرض
+                    التجارب، تبادل الخبرات، وتعزيز التكامل المجتمعي.
+                  </p>
+                  <a
+                    href="initiatives-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <!-- card 3 -->
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news2.jpg"
+                  alt="مبادرة"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> الرياض
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                    </p>
+                  </div>
+                  <a
+                    class="mt-2 block heading-5"
+                    href="initiatives-details.html"
+                  >
+                    فعالية يوم التأسيس لتمكين الأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                    خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                  </p>
+                  <a
+                    href="initiatives-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Other associations' events -->
+            <div class="mt-14 border-t border-base-300 pt-12">
+              <div class="mb-8 flex items-center justify-between gap-4">
+                <h2 class="heading-3">فعاليات جمعيات أخرى</h2>
+                <a
+                  href="events.html"
+                  class="shrink-0 text-sm font-medium text-gray-400 transition-colors hover:text-brand-green"
+                  >شاهد الكل <i class="fa-solid fa-angle-left"></i
+                ></a>
+              </div>
+              <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="فعالية"
+                    class="h-52 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-location-dot"></i> الرياض
+                      </p>
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                      </p>
+                    </div>
+                    <a class="mt-2 block heading-5" href="event-details.html">
+                      فعالية يوم التأسيس لتمكين الأيتام
+                    </a>
+                    <p class="paragraph mt-3 text-sm text-gray-500">
+                      فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام
+                      من خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                    </p>
+                    <a
+                      href="event-details.html"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news1.jpg"
+                    alt="فعالية"
+                    class="h-52 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-location-dot"></i> جدة
+                      </p>
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-regular fa-calendar"></i> 16 مارس 2026
+                      </p>
+                    </div>
+                    <a class="mt-2 block heading-5" href="event-details.html">
+                      ملتقى المبادرات المجتمعية للأيتام
+                    </a>
+                    <p class="paragraph mt-3 text-sm text-gray-500">
+                      ملتقى يجمع الجمعيات والمبادرات المهتمة برعاية الأيتام لعرض
+                      التجارب، تبادل الخبرات، وتعزيز التكامل المجتمعي.
+                    </p>
+                    <a
+                      href="event-details.html"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="فعالية"
+                    class="h-52 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-location-dot"></i> الرياض
+                      </p>
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                      </p>
+                    </div>
+                    <a class="mt-2 block heading-5" href="event-details.html">
+                      فعالية يوم التأسيس لتمكين الأيتام
+                    </a>
+                    <p class="paragraph mt-3 text-sm text-gray-500">
+                      فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام
+                      من خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                    </p>
+                    <a
+                      href="event-details.html"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== Panel: Events ===== -->
+          <section id="panel-events" role="tabpanel" class="assoc-panel hidden">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <!-- 6 event cards -->
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news2.jpg"
+                  alt="فعالية"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> الرياض
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                    </p>
+                  </div>
+                  <a class="mt-2 block heading-5" href="event-details.html">
+                    فعالية يوم التأسيس لتمكين الأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                    خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                  </p>
+                  <a
+                    href="event-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news1.jpg"
+                  alt="فعالية"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> جدة
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 16 مارس 2026
+                    </p>
+                  </div>
+                  <a class="mt-2 block heading-5" href="event-details.html">
+                    ملتقى المبادرات المجتمعية للأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    ملتقى يجمع الجمعيات والمبادرات المهتمة برعاية الأيتام لعرض
+                    التجارب، تبادل الخبرات، وتعزيز التكامل المجتمعي.
+                  </p>
+                  <a
+                    href="event-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news2.jpg"
+                  alt="فعالية"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> الرياض
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                    </p>
+                  </div>
+                  <a class="mt-2 block heading-5" href="event-details.html">
+                    فعالية يوم التأسيس لتمكين الأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                    خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                  </p>
+                  <a
+                    href="event-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news2.jpg"
+                  alt="فعالية"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> الرياض
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                    </p>
+                  </div>
+                  <a class="mt-2 block heading-5" href="event-details.html">
+                    فعالية يوم التأسيس لتمكين الأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                    خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                  </p>
+                  <a
+                    href="event-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news1.jpg"
+                  alt="فعالية"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> جدة
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 16 مارس 2026
+                    </p>
+                  </div>
+                  <a class="mt-2 block heading-5" href="event-details.html">
+                    ملتقى المبادرات المجتمعية للأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    ملتقى يجمع الجمعيات والمبادرات المهتمة برعاية الأيتام لعرض
+                    التجارب، تبادل الخبرات، وتعزيز التكامل المجتمعي.
+                  </p>
+                  <a
+                    href="event-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+              <article class="main-card overflow-hidden">
+                <img
+                  src="/src/assets/images/news2.jpg"
+                  alt="فعالية"
+                  class="h-52 w-full object-cover"
+                />
+                <div class="p-5">
+                  <div class="flex flex-wrap gap-x-4 gap-y-1">
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-solid fa-location-dot"></i> الرياض
+                    </p>
+                    <p class="text-xs text-gray-400">
+                      <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                    </p>
+                  </div>
+                  <a class="mt-2 block heading-5" href="event-details.html">
+                    فعالية يوم التأسيس لتمكين الأيتام
+                  </a>
+                  <p class="paragraph mt-3 text-sm text-gray-500">
+                    فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                    خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                  </p>
+                  <a
+                    href="event-details.html"
+                    class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                    >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                  ></a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Other associations' events -->
+            <div class="mt-14 border-t border-base-300 pt-12">
+              <div class="mb-8 flex items-center justify-between gap-4">
+                <h2 class="heading-3">فعاليات جمعيات أخرى</h2>
+                <a
+                  href="events.html"
+                  class="shrink-0 text-sm font-medium text-gray-400 transition-colors hover:text-brand-green"
+                  >شاهد الكل <i class="fa-solid fa-angle-left"></i
+                ></a>
+              </div>
+              <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="فعالية"
+                    class="h-52 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-location-dot"></i> الرياض
+                      </p>
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                      </p>
+                    </div>
+                    <a class="mt-2 block heading-5" href="event-details.html">
+                      فعالية يوم التأسيس لتمكين الأيتام
+                    </a>
+                    <p class="paragraph mt-3 text-sm text-gray-500">
+                      فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام
+                      من خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                    </p>
+                    <a
+                      href="event-details.html"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news1.jpg"
+                    alt="فعالية"
+                    class="h-52 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-location-dot"></i> جدة
+                      </p>
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-regular fa-calendar"></i> 16 مارس 2026
+                      </p>
+                    </div>
+                    <a class="mt-2 block heading-5" href="event-details.html">
+                      ملتقى المبادرات المجتمعية للأيتام
+                    </a>
+                    <p class="paragraph mt-3 text-sm text-gray-500">
+                      ملتقى يجمع الجمعيات والمبادرات المهتمة برعاية الأيتام لعرض
+                      التجارب، تبادل الخبرات، وتعزيز التكامل المجتمعي.
+                    </p>
+                    <a
+                      href="event-details.html"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+                <article class="main-card overflow-hidden">
+                  <img
+                    src="/src/assets/images/news2.jpg"
+                    alt="فعالية"
+                    class="h-52 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-1">
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-location-dot"></i> الرياض
+                      </p>
+                      <p class="text-xs text-gray-400">
+                        <i class="fa-regular fa-calendar"></i> 22 فبراير 2026
+                      </p>
+                    </div>
+                    <a class="mt-2 block heading-5" href="event-details.html">
+                      فعالية يوم التأسيس لتمكين الأيتام
+                    </a>
+                    <p class="paragraph mt-3 text-sm text-gray-500">
+                      فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام
+                      من خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+                    </p>
+                    <a
+                      href="event-details.html"
+                      class="mt-4 inline-block text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                      >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                    ></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============== Footer ============== -->
+    <footer class="gradient-bg-2 m-3 rounded-2xl">
+      <div class="mx-auto max-w-[1200px] px-4 md:pt-14 pt-6 pb-6">
+        <div class="grid gap-8 grid-cols-2 md:grid-cols-7">
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex items-center gap-2">
+              <img
+                src="/src/assets/images/logo-w.svg"
+                alt="شعار أيتامنا"
+                class="size-28"
+              />
+            </div>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="index.html" class="footer-link">الرئيسية</a></li>
+              <li><a href="about.html" class="footer-link">من نحن</a></li>
+              <li><a href="#" class="footer-link">خدماتنا</a></li>
+              <li><a href="#" class="footer-link">المعرفة</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li>
+                <a href="associations.html" class="footer-link"
+                  >دليل الجمعيات</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">دليل المانجين</a></li>
+              <li><a href="#" class="footer-link">المقالات</a></li>
+              <li><a href="#" class="footer-link">الدورات</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">الأخبار</a></li>
+              <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ اﻟﺼﻮر </a></li>
+              <li><a href="#" class="footer-link">دﻟﻴﻞ ﺟﻮاﺋﺰ اﻟﺘﻤﻴﺰ</a></li>
+              <li><a href="#" class="footer-link">الدورات</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="footer-link">إﺻﺪارات اﺳﺘﺮاﺗﻴﺠﻴﺔ رﺷﺪ</a>
+              </li>
+              <li><a href="#" class="footer-link">ﻣﻮﻗﻊ ﺟﻤﻊ اﻟﺘﺒﺮﻋﺎت</a></li>
+              <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ ﻋﻨﺎﻳﺔ</a></li>
+              <li><a href="#" class="footer-link">اﻟﺸﺮاﻛﺎت</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">أيتامنا مطمئنون</a></li>
+              <li>
+                <a href="#" class="footer-link">اﻟﺘﻘﺮﻳﺮ اﻟﻤﺸﺘﺮك ﻟﻠﺠﻤﻌﻴﺎت </a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">ﺧﺮﻳﻄﺔ اﻟﻤﻤﻠﻜﺔ اﻟﺤﺮارﻳﺔ </a>
+              </li>
+              <li><a href="#" class="footer-link">الوظائف</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">سياسة الخصوصية</a></li>
+              <li><a href="#" class="footer-link">الشروط والأحكام</a></li>
+              <li><a href="#" class="footer-link">الأسئلة الشائعة</a></li>
+              <li><a href="#" class="footer-link">تواصل معنا</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-5 px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-white text-sm"
+        >
+          <!-- Copyright -->
+          <p class="font-medium">جميع الحقوق محفوظة 2026</p>
+
+          <!-- Center Text -->
+          <p class="text-center">
+            تم التطوير بواسطة المجلس الفرعي التخصصي لجمعيات الأيتام.
+          </p>
+
+          <!-- Social -->
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-linkedin-in text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-youtube text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c150b48bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

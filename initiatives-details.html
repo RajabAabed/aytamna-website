@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+      rel="stylesheet"
+    />
+    <title>تفاصيل المبادرات — أيتامنا</title>
+  </head>
+  <body class="bg-base-100 text-base-content">
+    <!-- ============== Header / Navbar ============== -->
+    <header class="sticky top-0 z-50 border-b border-base-300 backdrop-blur">
+      <div
+        class="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4"
+      >
+        <div class="flex items-center gap-2 shrink-0 items-center">
+          <a href="index.html">
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="Logo"
+              class="h-9 w-auto"
+            />
+          </a>
+          <a href="index.html">
+            <img
+              src="/src/assets/images/logo2.svg"
+              alt="Logo"
+              class="h-9 w-auto"
+            />
+          </a>
+        </div>
+        <!-- Nav links -->
+        <nav class="hidden items-center gap-1 lg:flex">
+          <a href="index.html" class="header-link">الرئيسية</a>
+          <a href="about.html" class="header-link">من نحن</a>
+
+          <!-- خدماتنا dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="services-dropdown"
+              type="button"
+              class="dropdown-toggle inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-brand-navy hover:bg-base-200"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="خدماتنا"
+            >
+              خدماتنا
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="services-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >موقع جمع التبرعات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >مكتبة عناية</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >الدورات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >المبادرات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >الشراكات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >أيتامنا مطمئنون</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="header-link">المبادرات</a>
+          <a href="#" class="header-link">الجمعيات</a>
+        </nav>
+
+        <!-- Auth buttons -->
+        <div class="flex items-center gap-2">
+          <a href="#" class="header-link">تسجيل دخول</a>
+          <a href="#" class="primary-btn">تسجيل جمعية</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-[1200px] px-4">
+      <!-- ============== Breadcrumb ============== -->
+      <nav
+        class="flex flex-wrap items-center gap-2 py-6 text-sm text-gray-400"
+        aria-label="مسار التنقل"
+      >
+        <a href="#" class="transition-colors hover:text-brand-green"
+          >مبادرات الجمعيات</a
+        >
+        <i class="fa-solid fa-angle-left text-xs"></i>
+        <span class="text-brand-navy">مبادرة يوم التأسيس لتمكين الأيتام</span>
+      </nav>
+
+      <!-- ============== Article + Sidebar ============== -->
+      <div class="grid gap-8 pb-16 lg:grid-cols-3">
+        <!-- ===== Main article column ===== -->
+        <article class="lg:col-span-2">
+          <!-- Featured banner -->
+          <div class="relative h-64 overflow-hidden rounded-3xl md:h-80">
+            <img
+              src="/src/assets/images/news2.jpg"
+              alt="مبادرة يوم التأسيس لتمكين الأيتام"
+              class="h-full w-full object-center object-cover"
+            />
+          </div>
+
+          <!-- Title -->
+          <h1 class="mt-8 heading-2">
+            مبادرة يوم التأسيس لتمكين الأيتام.. تعزيز للاستدامة وتطوير للقدرات
+          </h1>
+
+          <!-- Meta -->
+          <div
+            class="mt-4 flex flex-wrap items-center gap-6 text-sm text-gray-400"
+          >
+            <span class="inline-flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-green"></i>
+              الرياض
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <i class="fa-regular fa-calendar text-brand-green"></i>
+              22 فبراير 2026
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div
+            class="mt-8 space-y-6 text-justify leading-loose text-brand-navy"
+          >
+            <p>
+              تزامناً مع ذكرى يوم التأسيس المجيد، نظمت "الأوقاف العقاري الخيرية"
+              فعالية مميزة ومبادرة نوعية تهدف إلى بناء قدرات العاملين في جمعيات
+              الأيتام بالمملكة وتبادل الخبرات بينها. تأتي هذه المبادرة انطلاقاً
+              من أن الأوقاف لإحدى الجهات الوقفية الرائدة التي تسعى لمساعدة
+              العاملة في تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر
+              المستدام، وتركز الفعالية على تمكين المشاريع النوعية ودعم الجهات
+              العاملة في القطاع غير الربحي.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري إحدى الجهات الوقفية التي تسعى إلى الإسهام في
+              تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر المستدام،
+              وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات العاملة في
+              القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم في تحسين
+              جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ مفهوم
+              العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري الخيرية إحدى الجهات الوقفية التي تسعى إلى
+              الإسهام في تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر
+              المستدام، وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات
+              العاملة في القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم
+              في تحسين جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ
+              مفهوم العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري إحدى الجهات الوقفية التي تسعى إلى الإسهام في
+              تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر المستدام،
+              وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات العاملة في
+              القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم في تحسين
+              جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ مفهوم
+              العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري الخيرية إحدى الجهات الوقفية التي تسعى إلى
+              الإسهام في تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر
+              المستدام، وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات
+              العاملة في القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم
+              في تحسين جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ
+              مفهوم العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري إحدى الجهات الوقفية التي تسعى إلى الإسهام في
+              تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر المستدام،
+              وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات العاملة في
+              القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم في تحسين
+              جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ مفهوم
+              العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري الخيرية إحدى الجهات الوقفية التي تسعى إلى
+              الإسهام في تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر
+              المستدام، وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات
+              العاملة في القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم
+              في تحسين جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ
+              مفهوم العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+            <p>
+              تُعد الأوقاف العقاري إحدى الجهات الوقفية التي تسعى إلى الإسهام في
+              تنمية المجتمع ودعم المبادرات الخيرية والتنمية ذات أثر المستدام،
+              وتركز الأوقاف على تمكين المشاريع النوعية ودعم الجهات العاملة في
+              القطاع غير الربحي، وتعزز الشراكات المجتمعية التي تسهم في تحسين
+              جودة الحياة وخدمة الفئات المستفيدة، كما تهدف إلى ترسيخ مفهوم
+              العطاء المؤسسي المستدام، من خلال توجيه الدعم نحو البرامج
+              والمبادرات التي تحقق قيمة مضافة وأثراً ملموساً في المجتمع.
+            </p>
+          </div>
+
+          <!-- Share -->
+          <div class="mt-10 flex items-center gap-4">
+            <span class="text-sm font-medium text-brand-navy"
+              >مشاركة الفعالية</span
+            >
+            <div class="flex items-center gap-3">
+              <a
+                href="#"
+                aria-label="إنستغرام"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-base-300 text-gray-400 transition hover:border-brand-green hover:text-brand-green"
+              >
+                <i class="fa-brands fa-instagram text-sm"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="فيسبوك"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-base-300 text-gray-400 transition hover:border-brand-green hover:text-brand-green"
+              >
+                <i class="fa-brands fa-facebook-f text-sm"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="إكس"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-base-300 text-gray-400 transition hover:border-brand-green hover:text-brand-green"
+              >
+                <i class="fa-brands fa-x-twitter text-sm"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="لينكدإن"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-base-300 text-gray-400 transition hover:border-brand-green hover:text-brand-green"
+              >
+                <i class="fa-brands fa-linkedin-in text-sm"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="نسخ الرابط"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-base-300 text-gray-400 transition hover:border-brand-green hover:text-brand-green"
+              >
+                <i class="fa-solid fa-link text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== Sidebar: related initiatives ===== -->
+        <aside class="lg:col-span-1">
+          <h2 class="mb-6 heading-4">مبادرات ذات صلة</h2>
+          <div class="space-y-4">
+            <a href="#" class="main-card flex items-stretch overflow-hidden">
+              <img
+                src="/src/assets/images/news1.jpg"
+                alt="مبادرة"
+                class="w-24 h-24 object-cover"
+              />
+              <div class="flex min-w-0 flex-col justify-center p-4">
+                <h3 class="paragrah line-clamp-2 font-medium">
+                  فعالية يوم التأسيس لتمكين الأيتام
+                </h3>
+                <span
+                  class="mt-2 inline-block text-sm font-medium text-gray-400"
+                  >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="main-card flex items-stretch overflow-hidden">
+              <img
+                src="/src/assets/images/news2.jpg"
+                alt="مبادرة"
+                class="w-24 h-24 object-cover"
+              />
+              <div class="flex min-w-0 flex-col justify-center p-4">
+                <h3 class="paragrah line-clamp-2 font-medium">
+                  فعالية يوم التأسيس لتمكين الأيتام
+                </h3>
+                <span
+                  class="mt-2 inline-block text-sm font-medium text-gray-400"
+                  >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="main-card flex items-stretch overflow-hidden">
+              <img
+                src="/src/assets/images/news1.jpg"
+                alt="مبادرة"
+                class="w-24 h-24 object-cover"
+              />
+              <div class="flex min-w-0 flex-col justify-center p-4">
+                <h3 class="paragrah line-clamp-2 font-medium">
+                  فعالية يوم التأسيس لتمكين الأيتام
+                </h3>
+                <span
+                  class="mt-2 inline-block text-sm font-medium text-gray-400"
+                  >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="main-card flex items-stretch overflow-hidden">
+              <img
+                src="/src/assets/images/news2.jpg"
+                alt="مبادرة"
+                class="w-24 h-24 object-cover"
+              />
+              <div class="flex min-w-0 flex-col justify-center p-4">
+                <h3 class="paragrah line-clamp-2 font-medium">
+                  فعالية يوم التأسيس لتمكين الأيتام
+                </h3>
+                <span
+                  class="mt-2 inline-block text-sm font-medium text-gray-400"
+                  >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                ></span>
+              </div>
+            </a>
+            <a href="#" class="main-card flex items-stretch overflow-hidden">
+              <img
+                src="/src/assets/images/news1.jpg"
+                alt="مبادرة"
+                class="w-24 h-24 object-cover"
+              />
+              <div class="flex min-w-0 flex-col justify-center p-4">
+                <h3 class="paragrah line-clamp-2 font-medium">
+                  فعالية يوم التأسيس لتمكين الأيتام
+                </h3>
+                <span
+                  class="mt-2 inline-block text-sm font-medium text-gray-400"
+                  >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- ============== Related articles ============== -->
+      <section class="border-t border-base-300 py-16">
+        <div class="mb-10 flex items-center justify-between gap-4">
+          <h2 class="heading-2">مبادرات ذات صلة</h2>
+          <a
+            href="blog.html"
+            class="shrink-0 text-sm font-medium text-gray-400 transition-colors hover:text-brand-green"
+            >شاهد الكل <i class="fa-solid fa-angle-left"></i
+          ></a>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="main-card overflow-hidden">
+            <img
+              src="/src/assets/images/news2.jpg"
+              alt="مقال"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <div class="flex gap-3">
+                <p class="text-xs text-gray-400">
+                  <i class="fa-solid fa-location-dot"></i> الرياض
+                </p>
+                <p class="text-xs text-gray-400">
+                  <i class="fa-regular fa-calendar-days"></i> 10 مارس 2026
+                </p>
+              </div>
+              <a class="mt-2 heading-5 block" href="#">
+                أهمية التكامل بين الجمعيات في رعاية الأيتام
+              </a>
+              <p class="paragrah text-sm mt-3">
+                فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-gray-400"
+                >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+              ></a>
+            </div>
+          </article>
+          <article class="main-card overflow-hidden">
+            <img
+              src="/src/assets/images/news2.jpg"
+              alt="مقال"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <div class="flex gap-3">
+                <p class="text-xs text-gray-400">
+                  <i class="fa-solid fa-location-dot"></i> الرياض
+                </p>
+                <p class="text-xs text-gray-400">
+                  <i class="fa-regular fa-calendar-days"></i> 10 مارس 2026
+                </p>
+              </div>
+              <a class="mt-2 heading-5 block" href="#">
+                أهمية التكامل بين الجمعيات في رعاية الأيتام
+              </a>
+              <p class="paragrah text-sm mt-3">
+                فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-gray-400"
+                >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+              ></a>
+            </div>
+          </article>
+          <article class="main-card overflow-hidden">
+            <img
+              src="/src/assets/images/news2.jpg"
+              alt="مقال"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-5">
+              <div class="flex gap-3">
+                <p class="text-xs text-gray-400">
+                  <i class="fa-solid fa-location-dot"></i> الرياض
+                </p>
+                <p class="text-xs text-gray-400">
+                  <i class="fa-regular fa-calendar-days"></i> 10 مارس 2026
+                </p>
+              </div>
+              <a class="mt-2 heading-5 block" href="#">
+                أهمية التكامل بين الجمعيات في رعاية الأيتام
+              </a>
+              <p class="paragrah text-sm mt-3">
+                فعالية مجتمعية تهدف إلى تعزيز الانتماء الوطني لدى الأيتام من
+                خلال أنشطة ثقافية وتعريفية بيوم التأسيس السعودي.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-gray-400"
+                >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============== Footer ============== -->
+    <footer class="gradient-bg-2 m-3 rounded-2xl">
+      <div class="mx-auto max-w-[1200px] px-4 md:pt-14 pt-6 pb-6">
+        <div class="grid gap-8 grid-cols-2 md:grid-cols-7">
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex items-center gap-2">
+              <img
+                src="/src/assets/images/logo-w.svg"
+                alt="شعار أيتامنا"
+                class="size-28"
+              />
+            </div>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="index.html" class="footer-link">الرئيسية</a></li>
+              <li><a href="about.html" class="footer-link">من نحن</a></li>
+              <li><a href="#" class="footer-link">خدماتنا</a></li>
+              <li><a href="#" class="footer-link">المعرفة</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">دليل الجمعيات</a></li>
+              <li><a href="#" class="footer-link">دليل المانجين</a></li>
+              <li><a href="#" class="footer-link">المقالات</a></li>
+              <li><a href="#" class="footer-link">الدورات</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">الأخبار</a></li>
+              <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ اﻟﺼﻮر </a></li>
+              <li><a href="#" class="footer-link">دﻟﻴﻞ ﺟﻮاﺋﺰ اﻟﺘﻤﻴﺰ</a></li>
+              <li><a href="#" class="footer-link">الدورات</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="footer-link">إﺻﺪارات اﺳﺘﺮاﺗﻴﺠﻴﺔ رﺷﺪ</a>
+              </li>
+              <li><a href="#" class="footer-link">ﻣﻮﻗﻊ ﺟﻤﻊ اﻟﺘﺒﺮﻋﺎت</a></li>
+              <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ ﻋﻨﺎﻳﺔ</a></li>
+              <li><a href="#" class="footer-link">اﻟﺸﺮاﻛﺎت</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">أيتامنا مطمئنون</a></li>
+              <li>
+                <a href="#" class="footer-link">اﻟﺘﻘﺮﻳﺮ اﻟﻤﺸﺘﺮك ﻟﻠﺠﻤﻌﻴﺎت </a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">ﺧﺮﻳﻄﺔ اﻟﻤﻤﻠﻜﺔ اﻟﺤﺮارﻳﺔ </a>
+              </li>
+              <li><a href="#" class="footer-link">الوظائف</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-4">
+              <li><a href="#" class="footer-link">سياسة الخصوصية</a></li>
+              <li><a href="#" class="footer-link">الشروط والأحكام</a></li>
+              <li><a href="#" class="footer-link">الأسئلة الشائعة</a></li>
+              <li><a href="#" class="footer-link">تواصل معنا</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-5 px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-white text-sm"
+        >
+          <!-- Copyright -->
+          <p class="font-medium">جميع الحقوق محفوظة 2026</p>
+
+          <!-- Center Text -->
+          <p class="text-center">
+            تم التطوير بواسطة المجلس الفرعي التخصصي لجمعيات الأيتام.
+          </p>
+
+          <!-- Social -->
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-linkedin-in text-xs"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/20 hover:bg-white hover:text-brand-navy transition flex items-center justify-center"
+            >
+              <i class="fa-brands fa-youtube text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c150b48bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

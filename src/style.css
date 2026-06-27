@@ -139,13 +139,111 @@
 .header-link:hover::after {
   content: "";
   display: block;
-
-  width: 20%;
-  bottom: -10px;
-  right: 0;
+  position: absolute;
+  width: 20px;
+  bottom: 5px;
+  right: 10px;
   border-bottom: 2px solid var(--color-brand-green);
   transition: width 0.3s ease;
 }
+/* .scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+} */
+
+.fixed-header {
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+.fixed-header > div {
+  transition: padding-top 0.3s ease;
+}
+.fixed-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--color-base-300);
+  box-shadow: 0 4px 20px -8px rgba(33, 59, 88, 0.15);
+}
+/* عند التمرير: إلغاء الحشوة العلوية للـ div الداخلي (pt-5 → pt-0) */
+.fixed-header.is-scrolled > div {
+  padding-top: 0;
+}
+
+/* الحاوية: على الموبايل تقسم العرض بالتساوي بين التبويبات */
+.assoc-tab {
+  position: relative;
+  flex: 1 1 0%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.85rem 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+  cursor: pointer;
+}
+.assoc-tab:hover {
+  color: var(--color-brand-navy);
+  background: color-mix(in srgb, var(--color-base-200) 60%, transparent);
+}
+.assoc-tab.is-active {
+  color: var(--color-brand-navy);
+  border-bottom-color: var(--color-brand-green);
+}
+.assoc-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  border-radius: 9999px;
+  background: var(--color-base-200);
+  color: #6b7280;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+.assoc-tab.is-active .assoc-tab-badge {
+  background: var(--color-brand-green);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .assoc-tab {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  .assoc-tab:hover {
+    background: transparent;
+  }
+}
+
 @layer components {
   .primary-btn {
     @apply inline-flex items-center justify-center text-white font-medium transition-all duration-300;
@@ -174,6 +272,15 @@
   }
   .outline-btn:hover {
     @apply bg-brand-navy text-white;
+  }
+  .green-btn {
+    @apply inline-flex items-center justify-center text-white font-medium transition-all duration-300 bg-[#65C07B];
+    padding: 10px 19px;
+    gap: 10px;
+    border-radius: 53px;
+  }
+  .green-btn:hover {
+    background-color: var(--color-brand-green);
   }
 
   .heading-1 {
