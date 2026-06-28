@@ -10,6 +10,10 @@ if (document.querySelector(".splide")) {
     gap: "1.5rem",
     pagination: false,
     arrows: false,
+    breakpoints: {
+      1024: { perPage: 2 },
+      640: { perPage: 1, gap: "1rem", focus: 0 },
+    },
   });
 
   splide.mount();
@@ -55,6 +59,127 @@ if (drawer && drawerOverlay) {
   // إغلاق بزر Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeDrawer();
+  });
+}
+
+// فلاتر الفعاليات: تحديث نص الزر عند اختيار عنصر من القائمة
+document.querySelectorAll(".dd-option").forEach((opt) => {
+  opt.addEventListener("click", () => {
+    const dd = opt.closest(".dropdown");
+    if (!dd) return;
+    const toggle = dd.querySelector(".dropdown-toggle");
+    const label = dd.querySelector(".dd-label");
+    if (label) label.textContent = opt.textContent.trim();
+    if (toggle) {
+      toggle.classList.remove("text-gray-400");
+      toggle.classList.add("text-brand-navy");
+    }
+  });
+});
+
+// كاليندر الفعاليات (FullCalendar)
+const calendarEl = document.getElementById("events-calendar");
+if (calendarEl && window.FullCalendar) {
+  const pad = (n) => String(n).padStart(2, "0");
+  const keyOf = (d) =>
+    `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+
+  const selectedDay = "2026-03-20";
+
+  // عناوين الفعاليات لكل يوم (للـ tooltip فقط — الكروت ثابتة)
+  const dayEvents = {
+    "2026-03-10": ["ملتقى المبادرات المجتمعية للأيتام"],
+    "2026-03-20": ["عيد الفطر", "اليوم العالمي للسعادة"],
+    "2026-03-27": ["فعالية يوم التأسيس تمكين الأيتام"],
+    "2026-03-30": ["ورشة تطوير المهارات الحياتية"],
+  };
+
+  // بناء محتوى الـ tooltip لليوم
+  const tooltipLines = (key) =>
+    dayEvents[key] && dayEvents[key].length
+      ? dayEvents[key]
+      : ["لا توجد فعاليات في هذا اليوم"];
+
+  // إظهار tooltip على خلية يوم محددة (واحد فقط، مع تثبيته داخل حدود الكاليندر)
+  const showTooltip = (dayEl, key) => {
+    calendarEl.querySelectorAll(".fc-day-tooltip").forEach((t) => t.remove());
+    const numEl = dayEl.querySelector(".fc-daygrid-day-number") || dayEl;
+    if (!numEl) return;
+    const hasEvents = !!(dayEvents[key] && dayEvents[key].length);
+    const tip = document.createElement("div");
+    tip.className = "fc-day-tooltip" + (hasEvents ? "" : " is-empty");
+    tip.innerHTML = tooltipLines(key)
+      .map((t) => `<span>${t}</span>`)
+      .join("");
+    calendarEl.appendChild(tip);
+
+    // حساب الموضع نسبةً لحاوية الكاليندر
+    const calRect = calendarEl.getBoundingClientRect();
+    const cellRect = numEl.getBoundingClientRect();
+    const cellCenterX = cellRect.left - calRect.left + cellRect.width / 2;
+    const cellTop = cellRect.top - calRect.top;
+    const margin = 6;
+    let left = cellCenterX - tip.offsetWidth / 2;
+    left = Math.max(
+      margin,
+      Math.min(left, calRect.width - tip.offsetWidth - margin)
+    );
+    tip.style.left = `${left}px`;
+    tip.style.top = `${cellTop - tip.offsetHeight - 10}px`;
+    // توجيه السهم نحو مركز اليوم
+    tip.style.setProperty("--arrow-x", `${cellCenterX - left}px`);
+  };
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+    initialDate: "2026-03-20",
+    locale: "ar",
+    direction: "rtl",
+    firstDay: 6,
+    height: "auto",
+    fixedWeekCount: false,
+    showNonCurrentDates: true,
+    headerToolbar: { start: "prev", center: "title", end: "next" },
+    titleFormat: { year: "numeric", month: "long" },
+    dayHeaderContent: (arg) => {
+      const names = [
+        "الأحد",
+        "الاثنين",
+        "الثلاثاء",
+        "الاربعاء",
+        "الخميس",
+        "الجمعة",
+        "السبت",
+      ];
+      return names[arg.dow];
+    },
+    dayCellClassNames: (arg) => {
+      const key = keyOf(arg.date);
+      const cls = [];
+      if (dayEvents[key]) cls.push("day-event");
+      if (key === selectedDay) cls.push("day-selected");
+      return cls;
+    },
+    dateClick: (info) => {
+      // نقل التحديد إلى اليوم المضغوط
+      calendarEl
+        .querySelectorAll(".day-selected, .day-active")
+        .forEach((el) => el.classList.remove("day-selected", "day-active"));
+      info.dayEl.classList.add(
+        dayEvents[info.dateStr] ? "day-selected" : "day-active"
+      );
+      // إظهار tooltip لليوم (فعالياته أو عدم وجودها)
+      showTooltip(info.dayEl, info.dateStr);
+    },
+  });
+  calendar.render();
+
+  // إظهار tooltip لليوم المحدد افتراضياً (بعد اكتمال التخطيط)
+  requestAnimationFrame(() => {
+    const initialCell = calendarEl.querySelector(
+      `.fc-daygrid-day[data-date="${selectedDay}"]`
+    );
+    if (initialCell) showTooltip(initialCell, selectedDay);
   });
 }
 
