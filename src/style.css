@@ -216,8 +216,8 @@
   font-weight: 700;
   color: var(--color-brand-navy);
 }
-#events-calendar .fc .fc-button,
-#events-calendar .fc .fc-button-primary {
+#events-calendar.fc .fc-button,
+#events-calendar.fc .fc-button-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -247,13 +247,24 @@
 }
 
 /* إزالة حدود الجدول */
-#events-calendar .fc-theme-standard td,
-#events-calendar .fc-theme-standard th,
-#events-calendar .fc-theme-standard .fc-scrollgrid,
-#events-calendar .fc-scrollgrid {
+#events-calendar.fc-theme-standard td,
+#events-calendar.fc-theme-standard th,
+#events-calendar.fc-theme-standard .fc-scrollgrid,
+#events-calendar.fc-scrollgrid {
   border: 0 !important;
 }
-
+#events-calendar .fc-col-header {
+  border-bottom: 0 !important;
+}
+#events-calendar .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 0px !important;
+  padding: 15px;
+}
+.fc-view-harness.fc-view-harness-passive {
+  border-top: 1.5px solid rgba(33, 59, 88, 0.16);
+  border-radius: 30px;
+  padding: 15px;
+}
 /* رؤوس أيام الأسبوع */
 #events-calendar .fc-col-header {
   border-bottom: 1px solid var(--color-base-300);
