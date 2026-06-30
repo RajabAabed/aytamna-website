@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>إنشاء حساب جديد — أيتامنا</title>
+  </head>
+  <body class="bg-white">
+    <main class="flex min-h-screen">
+      <!-- ============== اللوحة المتدرجة (يمين في RTL) ============== -->
+      <div class="hidden p-3 lg:block lg:w-1/2">
+        <div
+          class="auth-gradient sticky top-3 flex h-[calc(100vh-1.5rem)] items-center justify-center rounded-3xl"
+        >
+          <img
+            src="/src/assets/images/logo-w.svg"
+            alt="أيتامنا"
+            class="w-48 lg:w-56"
+          />
+        </div>
+      </div>
+
+      <!-- ============== نموذج إنشاء الحساب (يسار في RTL) ============== -->
+      <div class="flex w-full items-center justify-center px-6 py-12 lg:w-1/2">
+        <div class="w-full max-w-md">
+          <!-- شعار للموبايل فقط -->
+          <a href="index.html" class="mb-10 block lg:hidden">
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="أيتامنا"
+              class="h-10 w-auto"
+            />
+          </a>
+
+          <h1 class="heading-3">حياك الله في أيتامنا</h1>
+          <p class="paragraph mt-3 text-gray-500">
+            لإنشاء حساب جديد، يرجى ملئ البيانات بالأسفل
+          </p>
+
+          <form class="mt-8 space-y-5" action="#">
+            <!-- الأسم كامل -->
+            <div>
+              <label
+                for="fullname"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                الأسم كامل
+              </label>
+              <input
+                id="fullname"
+                type="text"
+                placeholder="الأسم كامل"
+                class="h-12 w-full rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+            </div>
+
+            <!-- رقم الهوية -->
+            <div>
+              <label
+                for="id-number"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                رقم الهوية
+              </label>
+              <input
+                id="id-number"
+                type="text"
+                inputmode="numeric"
+                placeholder="رقم الهوية"
+                class="h-12 w-full rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+            </div>
+
+            <!-- رقم الجوال -->
+            <div>
+              <label
+                for="phone"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                رقم الجوال
+              </label>
+              <div
+                class="flex h-12 items-stretch overflow-hidden rounded-xl border border-base-300 bg-base-100 transition focus-within:border-brand-green focus-within:ring-2 focus-within:ring-brand-green/20"
+              >
+                <span
+                  class="flex items-center gap-1.5 border-l border-base-300 bg-base-200/50 px-3 text-sm text-brand-navy"
+                >
+                  <span class="text-base leading-none">🇸🇦</span>
+                  <span dir="ltr">966+</span>
+                </span>
+                <input
+                  id="phone"
+                  type="tel"
+                  inputmode="tel"
+                  placeholder="رقم الجوال"
+                  class="w-full flex-1 bg-transparent px-4 text-sm text-brand-navy outline-none"
+                />
+              </div>
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div>
+              <label
+                for="email"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                البريد الإلكتروني
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="البريد الإلكتروني"
+                class="h-12 w-full rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+            </div>
+
+            <!-- المدينة -->
+            <div>
+              <label
+                for="city"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                المدينة
+              </label>
+              <input
+                id="city"
+                type="text"
+                placeholder="المدينة"
+                class="h-12 w-full rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+            </div>
+
+            <!-- نوع المستفيد -->
+            <div>
+              <label class="mb-2 block text-sm font-medium text-brand-navy">
+                نوع المستفيد
+              </label>
+              <div class="dropdown relative inline-flex w-full">
+                <button
+                  type="button"
+                  class="dropdown-toggle inline-flex h-12 w-full items-center justify-between gap-3 rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-gray-400 transition hover:border-brand-green"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <span class="dd-label">نوع المستفيد</span>
+                  <i
+                    class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform dropdown-open:rotate-180"
+                  ></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-open:opacity-100 hidden w-full rounded-2xl border border-base-300 bg-base-100 p-2 shadow-lg"
+                  role="menu"
+                >
+                  <li>
+                    <button type="button" class="dropdown-item dd-option">
+                      يتيم
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item dd-option">
+                      أرملة
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item dd-option">
+                      جمعية
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item dd-option">
+                      جهة مانحة
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item dd-option">
+                      مهتم بالقطاع
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- كلمة المرور -->
+            <div>
+              <label
+                for="password"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                كلمة المرور
+              </label>
+              <div class="relative">
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="كلمة المرور"
+                  class="h-12 w-full rounded-xl border border-base-300 bg-base-100 pl-11 pr-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+                <button
+                  type="button"
+                  class="pw-toggle absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 transition hover:text-brand-navy"
+                  aria-label="إظهار كلمة المرور"
+                >
+                  <i class="fa-solid fa-eye-slash"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- تأكيد كلمة المرور -->
+            <div>
+              <label
+                for="password-confirm"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                تأكيد كلمة المرور
+              </label>
+              <div class="relative">
+                <input
+                  id="password-confirm"
+                  type="password"
+                  placeholder="تأكيد كلمة المرور"
+                  class="h-12 w-full rounded-xl border border-base-300 bg-base-100 pl-11 pr-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+                <button
+                  type="button"
+                  class="pw-toggle absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 transition hover:text-brand-navy"
+                  aria-label="إظهار كلمة المرور"
+                >
+                  <i class="fa-solid fa-eye-slash"></i>
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="gradient-bg-2 mt-2 h-12 w-full rounded-xl font-medium text-white transition hover:opacity-95"
+            >
+              انشاء الحساب
+            </button>
+          </form>
+
+          <p class="mt-6 text-center text-sm text-gray-500">
+            هل لديك حسابك؟
+            <a
+              href="login.html"
+              class="font-bold text-brand-navy transition hover:text-brand-green"
+            >
+              تسجيل دخول
+            </a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/c150b48bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

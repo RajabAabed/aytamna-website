@@ -299,6 +299,82 @@ if (saMap && regionNameEl && regionListEl) {
   renderRegion("SAU1097");
 }
 
+// إظهار/إخفاء كلمة المرور في صفحات الحساب
+document.querySelectorAll(".pw-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const wrap = btn.closest(".relative");
+    const input = wrap && wrap.querySelector("input");
+    if (!input) return;
+    const show = input.type === "password";
+    input.type = show ? "text" : "password";
+    const icon = btn.querySelector("i");
+    if (icon) {
+      icon.classList.toggle("fa-eye-slash", !show);
+      icon.classList.toggle("fa-eye", show);
+    }
+  });
+});
+
+// رمز التحقق (OTP) في صفحة تفعيل الحساب
+const otpInputs = document.querySelectorAll(".otp-input");
+if (otpInputs.length) {
+  const submitBtn = document.getElementById("otp-submit");
+  const syncSubmit = () => {
+    const filled = [...otpInputs].every((i) => i.value.trim() !== "");
+    if (submitBtn) submitBtn.disabled = !filled;
+  };
+  otpInputs.forEach((input, idx) => {
+    input.addEventListener("input", () => {
+      // أرقام فقط
+      input.value = input.value.replace(/\D/g, "").slice(0, 1);
+      if (input.value && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
+      syncSubmit();
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && !input.value && idx > 0) {
+        otpInputs[idx - 1].focus();
+      }
+    });
+    input.addEventListener("paste", (e) => {
+      e.preventDefault();
+      const digits = (e.clipboardData.getData("text") || "")
+        .replace(/\D/g, "")
+        .split("");
+      otpInputs.forEach((box, i) => (box.value = digits[i] || ""));
+      const next = Math.min(digits.length, otpInputs.length - 1);
+      otpInputs[next].focus();
+      syncSubmit();
+    });
+  });
+
+  // مؤقّت إعادة إرسال الرمز
+  const timerEl = document.getElementById("otp-timer");
+  const timerWrap = document.getElementById("otp-resend-wrap");
+  const resendBtn = document.getElementById("otp-resend");
+  if (timerEl && resendBtn) {
+    let remaining = 57;
+    const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+    const startTimer = () => {
+      remaining = 57;
+      timerEl.textContent = fmt(remaining);
+      timerWrap.classList.remove("hidden");
+      resendBtn.classList.add("hidden");
+      const id = setInterval(() => {
+        remaining -= 1;
+        if (remaining <= 0) {
+          clearInterval(id);
+          timerWrap.classList.add("hidden");
+          resendBtn.classList.remove("hidden");
+        } else {
+          timerEl.textContent = fmt(remaining);
+        }
+      }, 1000);
+    };
+    resendBtn.addEventListener("click", startTimer);
+    startTimer();
+  }
+}
+
 // التبويبات: تبديل المحتوى عند الضغط على كل تبويب
 const assocTabs = document.querySelectorAll(".assoc-tab");
 const assocPanels = document.querySelectorAll(".assoc-panel");

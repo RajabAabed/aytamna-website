@@ -121,6 +121,15 @@
 .gradient-bg-2 {
   background: linear-gradient(90deg, #4ab8d2 0%, #87c752 100%);
 }
+/* خلفية لوحة صفحات الحساب: تدرّج قطري سماوي→أخضر مع وهج خفيف */
+.auth-gradient {
+  background: radial-gradient(
+      55% 45% at 68% 32%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    linear-gradient(135deg, #44b4db 0%, #66bf86 52%, #82c341 100%);
+}
 .number-card:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -345,7 +354,8 @@
   font-weight: 500;
   color: var(--color-brand-navy);
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
   z-index: 30;
   pointer-events: none;
 }
@@ -432,7 +442,7 @@
   justify-content: center;
   gap: 0.35rem;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
   padding: 0.85rem 0.5rem;
   font-size: 0.82rem;
   font-weight: 600;

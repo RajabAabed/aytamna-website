@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>تفعيل الحساب — أيتامنا</title>
+  </head>
+  <body class="bg-white">
+    <main class="flex min-h-screen">
+      <!-- ============== اللوحة المتدرجة (يمين في RTL) ============== -->
+      <div class="hidden p-3 lg:block lg:w-1/2">
+        <div
+          class="auth-gradient flex h-full items-center justify-center rounded-3xl"
+        >
+          <img
+            src="/src/assets/images/logo-w.svg"
+            alt="أيتامنا"
+            class="w-48 lg:w-56"
+          />
+        </div>
+      </div>
+
+      <!-- ============== نموذج تفعيل الحساب (يسار في RTL) ============== -->
+      <div class="flex w-full items-center justify-center px-6 py-12 lg:w-1/2">
+        <div class="w-full max-w-md">
+          <!-- شعار للموبايل فقط -->
+          <a href="index.html" class="mb-10 block lg:hidden">
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="أيتامنا"
+              class="h-10 w-auto"
+            />
+          </a>
+
+          <h1 class="heading-3">تفعيل الحساب</h1>
+          <p class="paragraph mt-3 text-gray-500">
+            أدخل رمز التفعيل الذي تم إرساله إلى البريد الإلكتروني
+            <span dir="ltr">sami***************ah@gmail.com</span>
+          </p>
+
+          <form id="otp-form" class="mt-8" action="#">
+            <!-- خانات رمز التحقق -->
+            <div class="grid max-w-[340px] grid-cols-6 gap-2 sm:gap-3">
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="-"
+                class="otp-input aspect-square w-full rounded-xl border border-base-300 bg-base-100 text-center text-lg font-semibold text-brand-navy outline-none transition placeholder:text-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="-"
+                class="otp-input aspect-square w-full rounded-xl border border-base-300 bg-base-100 text-center text-lg font-semibold text-brand-navy outline-none transition placeholder:text-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="-"
+                class="otp-input aspect-square w-full rounded-xl border border-base-300 bg-base-100 text-center text-lg font-semibold text-brand-navy outline-none transition placeholder:text-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="-"
+                class="otp-input aspect-square w-full rounded-xl border border-base-300 bg-base-100 text-center text-lg font-semibold text-brand-navy outline-none transition placeholder:text-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="-"
+                class="otp-input aspect-square w-full rounded-xl border border-base-300 bg-base-100 text-center text-lg font-semibold text-brand-navy outline-none transition placeholder:text-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="1"
+                placeholder="-"
+                class="otp-input aspect-square w-full rounded-xl border border-base-300 bg-base-100 text-center text-lg font-semibold text-brand-navy outline-none transition placeholder:text-gray-300 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+            </div>
+
+            <!-- مؤقّت إعادة الإرسال -->
+            <p class="mt-6 text-sm font-medium text-brand-navy">
+              <span id="otp-resend-wrap">
+                يمكنك إعادة إرسال رمز التحقق بعد
+                <span id="otp-timer" dir="ltr">0:57</span> ثانية
+              </span>
+              <button
+                id="otp-resend"
+                type="button"
+                class="hidden text-brand-green underline transition hover:text-brand-navy"
+              >
+                إعادة إرسال رمز التحقق
+              </button>
+            </p>
+
+            <button
+              id="otp-submit"
+              type="submit"
+              disabled
+              class="gradient-bg-2 mt-6 h-12 w-full rounded-xl font-medium text-white opacity-50 transition disabled:cursor-not-allowed enabled:opacity-100 enabled:hover:opacity-95"
+            >
+              تفعيل الحساب
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/c150b48bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

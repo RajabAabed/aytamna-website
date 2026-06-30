@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>تسجيل دخول — أيتامنا</title>
+  </head>
+  <body class="bg-white">
+    <main class="flex min-h-screen">
+      <!-- ============== اللوحة المتدرجة (يمين في RTL) ============== -->
+      <div class="hidden p-3 lg:block lg:w-1/2">
+        <div
+          class="auth-gradient flex h-full items-center justify-center rounded-3xl"
+        >
+          <img
+            src="/src/assets/images/logo-w.svg"
+            alt="أيتامنا"
+            class="w-48 lg:w-56"
+          />
+        </div>
+      </div>
+
+      <!-- ============== نموذج تسجيل الدخول (يسار في RTL) ============== -->
+      <div class="flex w-full items-center justify-center px-6 py-12 lg:w-1/2">
+        <div class="w-full max-w-md">
+          <!-- شعار للموبايل فقط -->
+          <a href="index.html" class="mb-10 block lg:hidden">
+            <img
+              src="/src/assets/images/logo.svg"
+              alt="أيتامنا"
+              class="h-10 w-auto"
+            />
+          </a>
+
+          <h1 class="heading-3">تسجيل دخول</h1>
+          <p class="paragraph mt-3 text-gray-500">
+            أهلاً بعودتك! يرجى ادخال البيانات بالاسفل
+          </p>
+
+          <form class="mt-8 space-y-5" action="#">
+            <!-- البريد الإلكتروني -->
+            <div>
+              <label
+                for="email"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                البريد الإلكتروني
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="البريد الإلكتروني"
+                class="h-12 w-full rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+              />
+            </div>
+
+            <!-- كلمة المرور -->
+            <div>
+              <label
+                for="password"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
+                كلمة المرور
+              </label>
+              <div class="relative">
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="كلمة المرور"
+                  class="h-12 w-full rounded-xl border border-base-300 bg-base-100 pl-11 pr-4 text-sm text-brand-navy outline-none transition focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
+                />
+                <button
+                  type="button"
+                  class="pw-toggle absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 transition hover:text-brand-navy"
+                  aria-label="إظهار كلمة المرور"
+                >
+                  <i class="fa-solid fa-eye-slash"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- نسيت كلمة المرور + حفظ بيانات الدخول -->
+            <div class="flex items-center justify-between gap-3 text-sm">
+              <a
+                href="forgot-password.html"
+                class="font-medium text-brand-navy transition hover:text-brand-green"
+              >
+                نسيت كلمة المرور؟
+              </a>
+              <label class="flex cursor-pointer items-center gap-2 text-gray-500">
+                <input
+                  type="checkbox"
+                  class="checkbox checkbox-sm rounded border-base-300"
+                />
+                حفظ بيانات الدخول
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-2 h-12 w-full rounded-xl bg-brand-navy font-medium text-white transition hover:opacity-95"
+            >
+              تسجيل دخول
+            </button>
+          </form>
+
+          <p class="mt-6 text-center text-sm text-gray-500">
+            ليس لديك حسابك؟
+            <a
+              href="register.html"
+              class="font-bold text-brand-navy transition hover:text-brand-green"
+            >
+              إنشاء حساب
+            </a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/c150b48bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

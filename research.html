@@ -119,14 +119,14 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </ul>
           </div>
 
-          <a href="#" class="header-link">المبادرات</a>
-          <a href="#" class="header-link">الجمعيات</a>
+          <a href="initiatives.html" class="header-link">المبادرات</a>
+          <a href="associations.html" class="header-link">الجمعيات</a>
         </nav>
 
         <!-- Auth buttons (desktop) -->
         <div class="hidden items-center gap-2 lg:flex">
-          <a href="#" class="header-link">تسجيل دخول</a>
-          <a href="#" class="primary-btn">تسجيل جمعية</a>
+          <a href="login.html" class="header-link">تسجيل دخول</a>
+          <a href="register.html" class="primary-btn">تسجيل جمعية</a>
         </div>
 
         <!-- Burger (mobile) -->
@@ -278,8 +278,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
       <!-- Drawer auth buttons -->
       <div class="flex flex-col gap-3 border-t border-base-300 p-4">
-        <a href="#" class="outline-btn w-full">تسجيل دخول</a>
-        <a href="#" class="primary-btn w-full">تسجيل جمعية</a>
+        <a href="login.html" class="outline-btn w-full">تسجيل دخول</a>
+        <a href="register.html" class="primary-btn w-full">تسجيل جمعية</a>
       </div>
     </aside>
 
@@ -297,15 +297,56 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
       <!-- ============== Articles ============== -->
       <section class="mx-auto max-w-[1200px] px-4 pb-16 pt-14">
-        <!-- Search bar -->
-        <form class="mb-12 flex items-center gap-3">
+        <!-- Filter bar -->
+        <form
+          class="mb-12 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center"
+        >
           <input
             type="text"
             placeholder="ابحث عن ابحاث"
-            class="h-12 w-full rounded-full border border-base-300 bg-base-100 px-4 text-sm text-brand-navy outline-none transition focus:border-brand-green"
+            class="h-12 w-full rounded-full border border-base-300 bg-base-100 px-5 text-sm text-brand-navy outline-none transition focus:border-brand-green md:flex-1 md:min-w-[240px]"
           />
-          <!-- TODO: select -->
-          <button type="submit" class="green-btn shrink-0 px-6">بحث</button>
+          <!-- نوع الدراسة -->
+          <div class="dropdown relative inline-flex w-full md:w-auto">
+            <button
+              type="button"
+              class="event-filter dropdown-toggle inline-flex h-12 w-full items-center justify-between gap-3 rounded-full border border-base-300 bg-base-100 px-5 text-sm text-gray-400 transition hover:border-brand-green md:w-auto md:min-w-[160px]"
+              aria-haspopup="menu"
+              aria-expanded="false"
+            >
+              <span class="dd-label">نوع الدراسة</span>
+              <i
+                class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform dropdown-open:rotate-180"
+              ></i>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-[170px] rounded-2xl border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+            >
+              <li>
+                <button type="button" class="dropdown-item dd-option">
+                  دراسة ميدانية
+                </button>
+              </li>
+              <li>
+                <button type="button" class="dropdown-item dd-option">
+                  دراسة تحليلية
+                </button>
+              </li>
+              <li>
+                <button type="button" class="dropdown-item dd-option">
+                  ورقة بحثية
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            type="submit"
+            class="green-btn h-12 w-full md:w-auto md:px-10"
+          >
+            بحث
+          </button>
         </form>
 
         <!-- Articles grid -->
@@ -660,7 +701,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <li><a href="#" class="footer-link">دليل الجمعيات</a></li>
               <li><a href="#" class="footer-link">دليل المانجين</a></li>
               <li><a href="#" class="footer-link">المقالات</a></li>
-              <li><a href="#" class="footer-link">الدورات</a></li>
+              <li><a href="courses.html" class="footer-link">الدورات</a></li>
             </ul>
           </div>
           <div>
@@ -668,7 +709,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <li><a href="#" class="footer-link">الأخبار</a></li>
               <li><a href="#" class="footer-link">ﻣﻜﺘﺒﺔ اﻟﺼﻮر </a></li>
               <li><a href="#" class="footer-link">دﻟﻴﻞ ﺟﻮاﺋﺰ اﻟﺘﻤﻴﺰ</a></li>
-              <li><a href="#" class="footer-link">الدورات</a></li>
+              <li><a href="courses.html" class="footer-link">الدورات</a></li>
             </ul>
           </div>
           <div>
