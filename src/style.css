@@ -123,7 +123,8 @@
 }
 /* خلفية لوحة صفحات الحساب: تدرّج قطري سماوي→أخضر مع وهج خفيف */
 .auth-gradient {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       55% 45% at 68% 32%,
       rgba(255, 255, 255, 0.22) 0%,
       rgba(255, 255, 255, 0) 60%
@@ -215,26 +216,28 @@
   font-weight: 700;
   color: var(--color-brand-navy);
 }
-#events-calendar .fc .fc-button {
+#events-calendar .fc .fc-button,
+#events-calendar .fc .fc-button-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 2.1rem;
+  height: 2.1rem;
   padding: 0;
-  background: transparent;
-  border: 1px solid var(--color-base-300);
-  border-radius: 9999px;
-  color: var(--color-brand-navy);
-  box-shadow: none;
+  background-color: #fff !important;
+  background-image: none !important;
+  border: 1px solid var(--color-base-300) !important;
+  border-radius: 9999px !important;
+  color: var(--color-brand-navy) !important;
+  box-shadow: none !important;
 }
 #events-calendar .fc .fc-button:hover,
 #events-calendar .fc .fc-button-primary:not(:disabled):active,
 #events-calendar .fc .fc-button-primary:not(:disabled).fc-button-active {
-  background: var(--color-base-200);
-  border-color: var(--color-base-300);
-  color: var(--color-brand-navy);
-  box-shadow: none;
+  background-color: var(--color-base-200) !important;
+  border-color: var(--color-base-300) !important;
+  color: var(--color-brand-navy) !important;
+  box-shadow: none !important;
 }
 #events-calendar .fc .fc-button:focus {
   box-shadow: none;
@@ -248,7 +251,7 @@
 #events-calendar .fc-theme-standard th,
 #events-calendar .fc-theme-standard .fc-scrollgrid,
 #events-calendar .fc-scrollgrid {
-  border: 0;
+  border: 0 !important;
 }
 
 /* رؤوس أيام الأسبوع */

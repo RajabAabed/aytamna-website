@@ -4,7 +4,9 @@
       "Bash(cd /d/Portals/aytamna/node_modules/flyonui && echo \"===README THEME===\" && grep -n -iE \"@plugin \\\\\"flyonui/theme\\\\\"|@plugin 'flyonui/theme'|--color-primary|name:|prefersdark|themes:\" README.md | head -40 && echo \"===THEME DIR===\" && ls theme 2>/dev/null && ls themes 2>/dev/null)",
       "Read(//d/d/Portals/aytamna/node_modules/flyonui/**)",
       "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(JSON.stringify\\(p.exports,null,1\\)\\)\")",
-      "Bash(node --input-type=module -e \"import p from './package.json' with { type: 'json' }; console.log\\(JSON.stringify\\(p.default.exports, null, 1\\)\\)\")"
+      "Bash(node --input-type=module -e \"import p from './package.json' with { type: 'json' }; console.log\\(JSON.stringify\\(p.default.exports, null, 1\\)\\)\")",
+      "Bash(node -e \"let f=require\\('fs'\\);let s=f.readFileSync\\('gap.cjs','utf8'\\);s=s.replace\\('id=\\\\\"\\\\${id}\\\\\"[\\\\\\\\\\\\\\\\s\\\\\\\\\\\\\\\\S]*?','PLACE'\\);console.log\\(s.includes\\('PLACE'\\)\\);\")",
+      "Bash(perl -0pi -e 's/\\\\[\\\\\\\\s\\\\\\\\S\\\\]/[\\\\\\\\\\\\\\\\s\\\\\\\\\\\\\\\\S]/g' gap.cjs)"
     ]
   }
 }
