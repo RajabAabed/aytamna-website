@@ -391,12 +391,12 @@ if (saMap && regionNameEl && regionListEl) {
       regionListEl.innerHTML = data.items
         .map(
           (name, i) => `
-        <li class="flex items-center justify-between gap-4 px-4 py-4">
-          <div class="min-w-0">
+        <li class="flex items-center justify-start gap-10 px-4 py-4">
+          <img src="${logoPool[i % logoPool.length]}" alt="" class="h-11  w-[84px] shrink-0 object-contain" />
+          <div class="min-w-0 text-right">
             <p class="truncate text-sm font-bold text-brand-navy">${name}</p>
             <a href="associations-details.html" class="mt-1.5 inline-flex items-center gap-1 text-xs text-gray-400 transition hover:text-brand-green">اقرأ المزيد <i class="fa-solid fa-angle-left text-[10px]"></i></a>
           </div>
-          <img src="${logoPool[i % logoPool.length]}" alt="" class="h-11 w-auto max-w-[84px] shrink-0 object-contain" />
         </li>`,
         )
         .join("");

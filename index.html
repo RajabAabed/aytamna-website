@@ -258,9 +258,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </li>
             </ul>
           </div>
-
-          <a href="initiatives.html" class="header-link">المبادرات</a>
-          <a href="associations.html" class="header-link">الجمعيات</a>
         </nav>
 
         <!-- Auth buttons (desktop) -->
@@ -524,20 +521,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </ul>
             </details>
           </li>
-          <li>
-            <a
-              href="#"
-              class="block rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-base-200"
-              >المبادرات</a
-            >
-          </li>
-          <li>
-            <a
-              href="associations.html"
-              class="block rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-base-200"
-              >الجمعيات</a
-            >
-          </li>
         </ul>
       </nav>
 
@@ -673,19 +656,15 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           <div
             class="region-card relative rounded-3xl border border-base-300 bg-base-100 shadow-lg"
           >
-            <!-- شارة المنطقة: مستطيل مدوّر يطفو أعلى الزاوية اليمنى -->
-            <span
-              id="region-name"
-              class="absolute -top-4 right-5 z-10 rounded-2xl bg-brand-navy px-6 py-3.5 text-base font-bold text-white shadow-lg"
-              >منطقة الرياض</span
-            >
-            <div class="px-6 pb-1 pt-5 text-left">
-              <a
-                href="associations.html"
-                class="text-sm font-medium text-gray-400 transition hover:text-brand-green"
-                >مشاهدة الكل <i class="fa-solid fa-angle-left text-xs"></i
-              ></a>
-            </div>
+            <!-- شارة المنطقة: تبويب ملتصق بأعلى يمين البطاقة مع منحنى مقعّر -->
+            <span id="region-name" class="region-tab">منطقة الرياض</span>
+
+            <a
+              href="associations.html"
+              class="text-sm font-medium text-gray-400 transition hover:text-brand-green absolute top-[-30px] left-2"
+              >مشاهدة الكل <i class="fa-solid fa-angle-left text-xs"></i
+            ></a>
+
             <ul
               id="region-list"
               class="divide-y divide-base-200 px-2 pb-2"
@@ -714,8 +693,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                   x2="0"
                   y2="825"
                 >
-                  <stop offset="0" stop-color="#7cc6e0" />
-                  <stop offset="1" stop-color="#8cc63f" />
+                  <stop offset="0" stop-color="#f2f5da" />
+                  <stop offset="0.5" stop-color="#45b4db" />
+                  <stop offset="1" stop-color="#82c341" />
                 </linearGradient>
               </defs>
 
@@ -853,115 +833,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 d="M352.2,440.7l-0.4,4.9l0.1,3.3l0.3,1l0.6,0.8l0.5,0.5l1.8,1l1,0.8l0.9,1l1,1.6l2.5,8.2l1.2,2.7l0.4,1.3l1.4,7.4l6.1,14.6l0.5,0.7 l0.7,0.8l0.9,0.8l1,0.6l1,0.5l1,0.3l1.8,0.3l7.3-0.1l10.3,0.8l2.2,0.5l1.1,0.4l1.2,0.6l1.3,1.1l0.7,1.1l0.2,1l-0.2,0.9l-0.7,2.3 l-0.3,5.2v1.3l0.3,1.3l1.1,1.9l1,0.9l1,0.7l2.1,0.7l1.1,0.1l1.1-0.1l5.6-1.5l1-0.2l1.1,0.1l5.6,1l1,0.4l0.9,0.4l0.8,0.8v0.3 l-1.3,7.5v2.1l2.3,17.1v1l-0.1,1.1l-0.3,1.1l-0.5,1l-0.6,1l-1.4,1.9l-0.6,0.9l-0.4,1l-0.1,1.1l0.6,8.5l-0.3,2.2l-1.9,7.4l-0.1,1 l0.1,1.1l0.3,1l0.5,1.1l12.4,18.5l-5,2l-7.5,4.4l-1.6,0.6l-1.4,0.1l-3.1-1.1l-1.2-0.2l-1.3-0.1l-2.1,0.2l-1.5,0.5l-2.9,1.2l-0.9,0.3 l-0.8,0.2h-2.9l-1.7,0.4l-1.3,0.5l-1.2,0.8l-1.8,1.9l-1.4,1.1l-9.4,5.1l-12,11l-1.6,1.1l-2.5,1.4l-1.6,0.6l-1.4,0.1l-1-0.4l-1-0.6 l-0.9-0.8l-0.8-1l-4.8-10l-0.9-1.4l-2.7-2.3l-0.9-0.4l-1.2-0.2l-1,0.3l-4.4,2.5l-1,0.5l-1.1,0.3h-5l-1.6,0.2l-1.2,0.4l-2.4,0.9 l-1.4,0.4h-1l-0.6-0.2l-0.7-0.6l-0.6-0.9l-0.6-1l-1.4-4.2l-0.8-1l-1-0.9l-1.5-0.6l-1.1-0.2l-1.2,0.1l-1,0.4l-0.9,0.8l-0.8,0.8 l-0.4,0.7l-0.3,0.6l-0.2,0.9l-0.1,1v1.1l0.4,2.1l0.9,3l0.1,1.5v0.5l-0.4,1.3l-3.3,6.1l-1.3,3.3l-0.6,1l-1.2,1l-1.1,0.5l-1.1,0.3 l-4.6,0.8l-1.4,0.4l-1.2,0.6l-1.1,0.8l-3.6,3.8l-0.7,0.9l-0.1,1l0.3,0.9l0.8,0.8l0.9,0.5l3.5,1.1l0.6,0.5l0.6,0.8l0.5,1l0.3,1.1v1.1 l-0.5,5.1v1.1l0.9,3.3l0.1,1l-0.2,4.2v0.9l0.2,1.1l0.6,1l0.7,0.7l0.5,0.4l3.7,2l1.1,1.1l3,4l1,0.8l1.1,0.5l1.3,0.3h1.1l1.1-0.2 l1-0.3l0.9-0.5l0.9-0.7l0.6-0.9l0.4-1l1.1-5.4l3-8.1l1.3-2.2l0.6-0.7l0.4-0.4l0.9-0.4l0.9-0.1h4.5l1.6-0.3l1.3-0.6l2.1-0.8l2-0.2 l0.9,0.2l0.7,0.3l0.6,0.4l0.7,0.9l0.6,1l0.3,1.1l0.1,1l-0.1,1l-1.5,6.5l-0.1,1.2l0.2,1.4l0.2,1l2,3.4l0.3,1.2v1.2L346,679l-0.4,0.9 l-0.7,0.9l-0.9,0.7l-0.8,0.3l-0.8,0.2h-0.6l-5.3-0.5h-1l-1.1,0.2l-1,0.3l-2.1,1.3l-2.4,1.8l-0.9,0.4h-0.9l-1-0.5l-0.8-0.6l-0.7-0.4 l-0.4,0.5l-0.2,0.9l-0.3,11.7l0.3,2.1l0.2,1l0.4,1l0.6,1l0.8,0.9l0.9,0.5l0.9,0.2h5.2l2.1,0.1l2,0.4l1,0.4l0.9,0.5l0.8,0.8l0.5,1 l3.2,9.9l0.4,1.5v1.3l-0.2,1.4l-1.7,6.3l-0.8,2l-0.6,0.8l-0.9,0.9l-2.9,1.6l-0.9,0.6l-0.7,0.8l-0.5,0.9l-0.9,2.1l-0.6-0.7l-0.3-0.6 l-0.1-0.6l-0.2-0.3l-0.5-0.2l-0.2-0.3l0.2-0.8l-1-0.1l-0.9-0.2l0.3-0.5l0.3-0.2l-0.3-0.6l-0.4-0.3h-0.6l-0.6,0.2l0.5-0.9l0.1-0.4 l-0.3-0.4l0.3-0.7l-0.3-0.3l-0.6-0.1l-0.7,0.1l0.1-0.7l-0.1-1l-0.4-0.9l-0.4-0.7l-0.2-0.6l-0.3-1.9l-0.3-0.8v-2.7l-0.3-0.5l-0.5-0.1 l-0.3-0.2l-0.1-0.9l-0.1-0.3l-1.7-1.2l-0.3-0.3v-0.6l-0.3-0.6l-0.3-0.5l-0.8-0.3l-0.5-0.6l-0.3,0.1l-0.5,0.5l-0.2,0.1l-0.5-0.2 l-0.4-0.2l-0.4-0.5l-0.4-0.4l-1.3-2.9l-0.5-0.7l-0.6-0.7l-0.3-0.6l-0.1-0.6l0.2-1l1.1-3.3l0.2-1l0.1-0.4l0.2-0.2l0.1-0.3l-0.4-0.7 h-0.2l-1.1-0.6V700l-2-0.5l-0.5-1.5v-0.3l-0.9-1.3l-0.2-0.1l-0.1-0.5l0.1-0.6l0.3-1l0.2-0.5l0.4-0.8l0.1-0.9l0.3-1.1l0.6-1.2 l-0.4-0.7l-0.9-0.6l-1-0.4l-2-0.6l-0.8-0.6l-0.5-1.4l-0.7-1l-0.2-0.5v-0.6l0.4-1.1v-0.5l-0.3-0.9l-0.1-0.5l-0.2-0.5l-0.8-0.5 l-0.3-0.4l-0.2-1.1l-0.5-0.5l-0.7-0.4l-1.3-1l0.2-0.8l-0.1-0.5l-0.5-0.8l-0.2-1l-0.2-0.8v-0.5l0.3-0.5l0.4-0.4l0.3-0.4l-0.4-0.4 l0.2-0.6l-0.1-0.5l-0.3-0.4l-0.1-0.6l-4.1-1.5l-1.1-0.6l-2.4-2.5l-1.1-0.6v-0.3l0.5,0.1l1.1,0.6l0.3-2.1l-0.2-2.5l-0.3-1.1l-2.2-3.2 l-0.9-0.6l-2.4-0.3l-1,0.1l-0.4,0.4l0.5,1.3l-0.7-0.6l-0.6-1l-0.4-1v-0.5l-0.7-0.4l-1.9-2.9l-1.5-0.9l-0.3-0.3v-0.4l0.6-1.3 l-0.2-0.9l-0.6-0.5l-1.5-0.7l-1.7-1.1l-0.5-0.1l-0.4-0.7l-0.8-0.4l-1.2-1.7l-0.4-0.2l-1.2-0.3h-0.4l-0.9-0.2l-0.9-0.6l-2.2-1.7 l-1.7-2l0.3-0.7l-0.8-0.6l-1.2-0.3l-1.5-0.2l-0.2-0.3l-0.5-0.6l-0.7-0.7l-0.4-0.5v-0.2l-0.5-0.3l-1.5-1.4l-0.8-0.4h-1l-1.2,0.2 l-1,0.4l-0.4,0.4l-1.1-0.4l-2-1.2l-1.1-0.5l0.1,0.6l0.3,0.4l0.8,0.6l0.6,0.4l0.3,0.3l-0.3,0.2l-0.8-0.2l-4.6-2.9l-0.7-0.6l-0.6-0.3 l-1-0.2l-0.8-0.4l-0.8-1.6l-0.8-0.8l-2.5-2l-1.3-1.3l-2.8-4.5l-1-0.8v-0.4h0.5h0.4l0.3-0.3l0.1-0.4l-0.7-0.1l-0.6-0.4l-1.1-1 l-0.3-0.6l-0.3-1.5l-0.2-0.5l-1.6-1.8l-0.1-0.9l0.7-1.2l-1.6-0.5l-0.7-0.1l0.1,0.3v0.4l-1.1-0.6l-0.6-0.8l0.3-0.8l-0.4-0.2l-0.2-0.3 V602l0.3-0.4l0.2,0.4l0.4,0.3l0.5,0.2l0.5,0.1l-0.2-0.6l-0.2-1.1l-0.5,0.1l-0.4-0.1l-0.6-1h-0.3v1l-1-0.7l-1.4-1.1l-1-1.2l0.1-1.2 l0.6,0.6l0.3,0.1l0.1-0.4l-0.2-0.6l-0.2-0.2l-0.4-0.1l-0.8-0.5l-0.5,0.1l-1,0.3v-0.2l-1.3-2.1l-0.3-0.7l-0.2-0.9v-1.2l-0.1-0.4 l-0.7-0.5l-0.1-0.4l-0.1-0.7l-0.2-0.2l-0.3-0.1l-2-1.4l-0.5-0.6l-0.3-1.4l-0.4-1l-0.1-0.6l0.1-0.2l0.4-0.7l0.1-0.3l-0.3-0.7 l-1.8-2.8l-0.6-0.4l-1.5-2.4l3.7-3.3l0.6-1.2V570l-0.3-1.5l-0.8-0.8v-0.3l0.6-0.4l-0.1-0.7l-0.8-1.7l-0.6,1.1l-0.5,0.1l-0.4-0.5 l-0.5-1.1l0.4-0.3l-0.8-1.1l-0.1-1.5v-1.6l-0.1-1.4l-0.5-1.4l0.1-0.7l0.9-0.4l0.3-0.3l0.2-0.6v-0.8l-0.4-0.7l-0.3,1.1l-0.3,0.4 l-0.3,0.3h-0.7l-0.1-0.2v-0.4l-0.2-0.5l-0.7-0.6l-0.2-0.4l-0.2-0.5v-0.8l-0.2-0.5l-0.6-0.3l-0.4-0.7l-1.6-2.1l-1.3-3l-0.9-4.3l0.1-1 l1.2-0.5l1.3,1.6l0.9,0.1l0.2-1.2v-1l0.1-0.5l0.9-0.7l0.1-0.2l0.1-1l0.5-2l0.1-1.1h-0.3l-0.7,1.8l-0.3-0.8l0.1-0.5l0.3-0.6l0.2-0.7 v-2.1l0.4-1.4l1.5-1.8l0.5-2.2l0.3-0.5l0.5-0.4l0.4-0.6l0.6-1.4l0.9-0.8l0.1-0.2v-0.7l-0.2-0.6l-0.5-0.3l-0.6,0.1l-0.3,0.5l-0.4,1.5 l-0.3,0.5l-1.1,0.2L214,521l0.6-2.2l-0.3-2.8l0.3-2.9l-0.3-1.4l-0.4-0.7l-1.3-1.8l-1.3-2.8l-0.9-1.6l-0.3-0.8l0.1-0.6l1.2-1.2v-0.4 l-2.3-2.5l-0.9-0.8l-0.4,0.3l0.1,0.2l0.9,0.9l0.3,0.5l0.1,0.5l0.2,1.1l0.3,0.5l-0.3,0.4l-0.7-1.5l-1.3-2.1l-1.3-1.4l-2.4-4.5v-0.7 l1.4,0.8l1.5,3.4l0.9,0.3l0.5,0.3l0.4-0.1l0.4-0.3l0.3-0.6l-0.5-0.6l-0.8-1.6l-0.9-0.4l-0.3-0.4l-0.3-0.5l-0.2-0.6l-0.4-0.8 l-0.9-0.4l-1.1-0.2l-0.8-0.5l-0.9,0.2l-0.7-0.8l-1-2.2l0.5-0.5l0.4-0.7l0.3-0.8l0.1-0.7l-0.1-1.5l-0.3-0.8v-0.6l-0.6-0.2l-0.4,0.7 l-0.6-1.1l-0.8-1.1l-0.9-1.7l-0.8-1l-0.4-1.2l-0.6-0.8l-0.1-0.7l-0.4-0.9v-0.7l-0.3-1.5l-0.7-1.3l-0.6-1.5l-0.1-0.9l1.4-0.2l5.9-0.5 l3.4-0.7l1.4-0.2l1.3,0.4l0.9,0.9l2,3.2l0.6,0.7l3.8,3.4l3.7,4.4l1.1,0.9l1.1,0.7l1.6,0.3l1.9-0.1l5-0.9h1.4l0.9,0.5l0.5,0.9l0.2,1 l0.2,2.1l0.5,0.8l1.1,0.5l3.6-0.7l10.1-3.1l4.5-0.6l1,0.1l1,0.3l0.9,0.7l0.5,0.9l0.3,1l0.2,0.9l0.1,1.6l-0.4,2.5l-0.2,0.9l-2.6,6.2 l-0.3,1l0.2,1l0.6,0.9l0.9,0.4l3.2,1l1.4,0.7l0.9,0.6l0.9,0.9l0.7,1l0.5,1l0.2,1.1l0.1,1.1l-0.3,2.2l-0.5,2.1l-0.1,1l0.2,1l0.5,0.9 l1,0.6h0.2l3.1,0.5h1.1l1-0.1l1.2-0.3l1.2-0.7l4.8-4.1l2-1.2l1.5-0.3l1.1,0.1l7.3,2.3l1.1-0.1l1.1-0.5l1.3-1.3l3.4-5.3l1.8-2.2 l13.5-10.7l6.6-6.6l1.5-1.2l1.3-0.9l5.5-2l1.1-0.6l0.9-1l0.5-1.5l-0.3-1.1l-0.8-0.8l-5.2-2.8l-1-0.8l-0.8-0.9l-0.3-1.1l0.5-1.3 l1.4-1.5l2.1-1.6l6.2-3.5l8.4-3.7l1.1-0.9l1.2-1.1l1.2-2l0.7-1.3l0.3-1.3l0.1-2.3l-0.1-1.1l-0.2-1.1l-1.2-3.4l-0.1-1.1l0.2-1l0.6-1 l1-0.7l1-0.4l3-0.2L352.2,440.7L352.2,440.7z"
               ></path>
             </svg>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== Offers & discounts ============== -->
-      <section>
-        <div class="mx-auto max-w-[1200px] px-4 py-16">
-          <div data-aos="fade-up" class="mb-10 text-center">
-            <h2 class="heading-2">العروض والخصومات المتاحة لك</h2>
-            <p class="mt-3 paragraph">
-              اختر العروض من المتاجر التجارية التي تجهها
-            </p>
-          </div>
-          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <!-- Offer card -->
-            <div data-aos="fade-up" class="main-card p-4">
-              <div class="flex items-stretch gap-4">
-                <div class="flex-1">
-                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
-                  <p class="paragraph text-sm mt-2">خصم حتى</p>
-                  <span class="mx-auto heading-4 mt-1"> 40% </span>
-                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
-                    >وفر الآن</a
-                  >
-                </div>
-
-                <div
-                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
-                >
-                  <img
-                    src="/src/assets/images/almarai.svg"
-                    alt="شعار المتجر"
-                    class="size-16"
-                  />
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="120" class="main-card p-4">
-              <div class="flex items-stretch gap-4">
-                <div class="flex-1">
-                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
-                  <p class="paragraph text-sm mt-2">خصم حتى</p>
-                  <span class="mx-auto heading-4 mt-1"> 40% </span>
-                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
-                    >وفر الآن</a
-                  >
-                </div>
-
-                <div
-                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
-                >
-                  <img
-                    src="/src/assets/images/almarai.svg"
-                    alt="شعار المتجر"
-                    class="size-16"
-                  />
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="240" class="main-card p-4">
-              <div class="flex items-stretch gap-4">
-                <div class="flex-1">
-                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
-                  <p class="paragraph text-sm mt-2">خصم حتى</p>
-                  <span class="mx-auto heading-4 mt-1"> 40% </span>
-                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
-                    >وفر الآن</a
-                  >
-                </div>
-
-                <div
-                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
-                >
-                  <img
-                    src="/src/assets/images/almarai.svg"
-                    alt="شعار المتجر"
-                    class="size-16"
-                  />
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-up" class="main-card p-4">
-              <div class="flex items-stretch gap-4">
-                <div class="flex-1">
-                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
-                  <p class="paragraph text-sm mt-2">خصم حتى</p>
-                  <span class="mx-auto heading-4 mt-1"> 40% </span>
-                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
-                    >وفر الآن</a
-                  >
-                </div>
-
-                <div
-                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
-                >
-                  <img
-                    src="/src/assets/images/almarai.svg"
-                    alt="شعار المتجر"
-                    class="size-16"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-8 text-center">
-            <a href="#" class="outline-btn">
-              عرض الكل
-              <i class="fa-solid fa-angle-left"></i>
-            </a>
           </div>
         </div>
       </section>
@@ -1430,6 +1301,115 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 >
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== Offers & discounts ============== -->
+      <section>
+        <div class="mx-auto max-w-[1200px] px-4 py-16">
+          <div data-aos="fade-up" class="mb-10 text-center">
+            <h2 class="heading-2">العروض والخصومات المتاحة لك</h2>
+            <p class="mt-3 paragraph">
+              اختر العروض من المتاجر التجارية التي تجهها
+            </p>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Offer card -->
+            <div data-aos="fade-up" class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="120" class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="240" class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up" class="main-card p-4">
+              <div class="flex items-stretch gap-4">
+                <div class="flex-1">
+                  <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
+                  <p class="paragraph text-sm mt-2">خصم حتى</p>
+                  <span class="mx-auto heading-4 mt-1"> 40% </span>
+                  <a href="" class="primary-btn block w-fit mt-1 text-sm py-1.5"
+                    >وفر الآن</a
+                  >
+                </div>
+
+                <div
+                  class="flex-1 rounded-3xl bg-linear-to-br from-brand-sky/10 to-brand-green/10 flex items-center justify-center self-stretch"
+                >
+                  <img
+                    src="/src/assets/images/almarai.svg"
+                    alt="شعار المتجر"
+                    class="size-16"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 text-center">
+            <a href="#" class="outline-btn">
+              عرض الكل
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
           </div>
         </div>
       </section>
