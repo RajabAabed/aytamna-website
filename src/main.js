@@ -15,6 +15,25 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
 
+// حقن شريط التقدّم وزر العودة للأعلى في كل الصفحات (إن لم يكونا موجودين)
+if (!document.getElementById("scroll-progress")) {
+  const bar = document.createElement("div");
+  bar.id = "scroll-progress";
+  bar.className = "scroll-progress";
+  bar.setAttribute("aria-hidden", "true");
+  document.body.prepend(bar);
+}
+if (!document.getElementById("back-to-top")) {
+  const btn = document.createElement("button");
+  btn.id = "back-to-top";
+  btn.className = "back-to-top";
+  btn.type = "button";
+  btn.setAttribute("aria-label", "العودة إلى الأعلى");
+  btn.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.appendChild(btn);
+}
+
 const progressBar = document.getElementById("scroll-progress");
 if (progressBar) {
   let ticking = false;
@@ -112,6 +131,52 @@ if (!prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
     };
     card.addEventListener("mousemove", onMove);
     card.addEventListener("mouseleave", onLeave);
+  });
+}
+
+// حركة ظهور تلقائية عند التمرير لكل الصفحات (للعناصر التي لا تملك data-aos أصلاً)
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  // لا نُخفي ما هو ظاهر فوق الطية أصلاً (نتفادى أي وميض)
+  const isInView = (el) => {
+    const r = el.getBoundingClientRect();
+    return r.top < window.innerHeight * 0.92 && r.bottom > 0;
+  };
+  const revealObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.classList.add("is-revealed");
+        obs.unobserve(el);
+        // بعد انتهاء الحركة نُزيل أصناف الظهور لتعود البطاقة لانتقالها الطبيعي (التفاعل مع المؤشر)
+        const delay = parseFloat(el.style.getPropertyValue("--reveal-delay")) || 0;
+        window.setTimeout(() => {
+          el.classList.remove("js-reveal", "is-revealed");
+          el.style.removeProperty("--reveal-delay");
+          el.style.removeProperty("will-change");
+        }, 700 + delay);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+  );
+  const prep = (el, delay) => {
+    if (el.hasAttribute("data-aos") || el.classList.contains("js-reveal")) return;
+    if (isInView(el)) return;
+    if (delay) el.style.setProperty("--reveal-delay", `${delay}ms`);
+    el.classList.add("js-reveal");
+    revealObserver.observe(el);
+  };
+  // العناوين الرئيسية للأقسام
+  document
+    .querySelectorAll("main .heading-1, main .heading-2")
+    .forEach((el) => prep(el, 0));
+  // البطاقات مع تدرّج زمني داخل كل شبكة
+  document.querySelectorAll("main .main-card").forEach((card) => {
+    const sibs = [...card.parentElement.children].filter((c) =>
+      c.classList.contains("main-card")
+    );
+    const i = Math.max(0, sibs.indexOf(card));
+    prep(card, (i % 4) * 90);
   });
 }
 

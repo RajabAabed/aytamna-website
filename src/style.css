@@ -103,6 +103,134 @@
    تأثيرات تفاعلية و"واو" (خفيفة، تحترم تفضيل تقليل الحركة)
    ============================================================ */
 
+/* تمرير سلس لروابط المرساة */
+html {
+  scroll-behavior: smooth;
+}
+
+/* لمعان يمرّ فوق الأزرار عند المرور */
+.primary-btn,
+.secondary-btn,
+.green-btn {
+  position: relative;
+  overflow: hidden;
+}
+.primary-btn::after,
+.secondary-btn::after,
+.green-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.38),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.primary-btn:hover::after,
+.secondary-btn:hover::after,
+.green-btn:hover::after {
+  left: 140%;
+}
+/* ضغطة الزر */
+.primary-btn:active,
+.secondary-btn:active,
+.green-btn:active,
+.outline-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* تكبير ناعم لصور الكروت التي تقصّ المحتوى (كروت الأخبار/الزيارات) */
+.main-card.overflow-hidden img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.main-card.overflow-hidden:hover img {
+  transform: scale(1.06);
+}
+
+/* انزلاق سهم الروابط عند المرور (الاتجاه الطبيعي في RTL) */
+.fa-angle-left {
+  transition: transform 0.25s ease;
+}
+a:hover > .fa-angle-left,
+button:hover .fa-angle-left,
+a:hover .fa-angle-left {
+  transform: translateX(-4px);
+}
+
+/* تدرّج لوني متحرّك بطيء للبانرات والفوتر */
+.gradient-bg-2 {
+  background-size: 200% 200%;
+  animation: gradient-pan 14s ease infinite;
+}
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* حلقة تركيز أنيقة لإمكانية الوصول */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-brand-sky);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* حركة ظهور تلقائية (تُفعّل عبر JS بإضافة .js-reveal، فلا يختفي المحتوى إن تعطّل JS) */
+.js-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.js-reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* إيقاف الحركات الجديدة عند تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .primary-btn::after,
+  .secondary-btn::after,
+  .green-btn::after,
+  .main-card.overflow-hidden img,
+  .fa-angle-left {
+    transition: none;
+  }
+  .gradient-bg-2 {
+    animation: none;
+  }
+  .js-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* شريط تقدّم القراءة أعلى الصفحة */
 .scroll-progress {
   position: fixed;
