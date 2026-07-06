@@ -20,6 +20,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <title>أيتامنا — منصة وطنية لخدمات ومبادرات الأيتام</title>
   </head>
   <body>
+    <!-- شريط تقدّم القراءة -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
     <!-- ============== Header / Navbar ============== -->
 
     <header id="site-header" class="fixed-header fixed top-0 z-50 w-full">
@@ -114,6 +117,143 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                   class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
                   href="reassured.html"
                   >أيتامنا مطمئنون</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- المعرفة dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="knowledge-dropdown"
+              type="button"
+              class="dropdown-toggle header-link inline-flex items-center gap-1"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="المعرفة"
+            >
+              المعرفة
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="knowledge-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="research.html"
+                  >الأبحاث والدراسات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="blog.html"
+                  >المقالات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="associations-finder.html"
+                  >باحث الجمعيات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >إصدارات استراتيجية رشد</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="images.html"
+                  >مكتبة الصور والفيديوهات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="awards.html"
+                  >دليل جوائز التميز</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >اللوائح والسياسات</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- المعلومات dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="info-dropdown"
+              type="button"
+              class="dropdown-toggle header-link inline-flex items-center gap-1"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="المعلومات"
+            >
+              المعلومات
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="info-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="associations.html"
+                  >دليل الجمعيات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="donor.html"
+                  >دليل المانحين</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="news.html"
+                  >الأخبار</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >مرصد خدمات الأيتام</a
                 >
               </li>
             </ul>
@@ -265,6 +405,125 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </ul>
             </details>
           </li>
+          <!-- المعرفة (collapsible) -->
+          <li>
+            <details class="group">
+              <summary
+                class="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-base-200"
+              >
+                المعرفة
+                <svg
+                  class="size-4 transition-transform group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <ul class="mt-1 space-y-1 ps-3">
+                <li>
+                  <a
+                    href="research.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >الأبحاث والدراسات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="blog.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >المقالات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="associations-finder.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >باحث الجمعيات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >إصدارات استراتيجية رشد</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="images.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >مكتبة الصور والفيديوهات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="awards.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >دليل جوائز التميز</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >اللوائح والسياسات</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <!-- المعلومات (collapsible) -->
+          <li>
+            <details class="group">
+              <summary
+                class="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-base-200"
+              >
+                المعلومات
+                <svg
+                  class="size-4 transition-transform group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <ul class="mt-1 space-y-1 ps-3">
+                <li>
+                  <a
+                    href="associations.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >دليل الجمعيات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="donor.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >دليل المانحين</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="news.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >الأخبار</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >مرصد خدمات الأيتام</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
           <li>
             <a
               href="#"
@@ -291,25 +550,118 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
     <main>
       <!-- ============== Hero ============== -->
-      <section class="gradient-bg m-3 rounded-2xl">
-        <div class="mx-auto max-w-[1200px] px-4 py-44 text-center">
-          <h1 class="mx-auto max-w-3xl heading-1">
+      <section class="gradient-bg m-3 rounded-2xl relative overflow-hidden">
+        <div
+          class="relative z-10 mx-auto max-w-[1200px] px-4 py-44 text-center"
+        >
+          <h1 data-aos="fade-up" class="mx-auto max-w-3xl heading-1 hero-title">
             منصة وطنية تجمع خدمات ومبادرات الأيتام في السعودية
           </h1>
-          <p class="mx-auto mt-5 max-w-2xl text-base text-gray-500 md:text-lg">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="120"
+            class="mx-auto mt-5 max-w-2xl text-base text-gray-500 md:text-lg"
+          >
             تعزيزًا للجمعيات المباركة، نوفّر المبادرات والبرامج والموارد المخصصة
             لدعم الأيتام في جميع مناطق المملكة
           </p>
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="240"
+            class="mt-8 flex flex-wrap items-center justify-center gap-3"
+          >
             <button class="secondary-btn py-4 px-8">تصفّح الجمعيات</button>
             <button class="primary-btn py-4 px-8">تسجيل الجمعيات</button>
           </div>
         </div>
       </section>
 
+      <!-- ============== زيارات كريمة ============== -->
+      <section class="mx-auto max-w-[1200px] px-4 py-16">
+        <div data-aos="fade-up" class="mb-10 text-center">
+          <h2 class="heading-2">زيارات كريمة</h2>
+          <p class="mt-3 paragraph">
+            نعزّز بالزيارات الكريمة والدعم المستمر من أصحاب السمو والمعالي
+            لمسيرة التمكين.
+          </p>
+        </div>
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Visit card -->
+          <article data-aos="fade-up" class="main-card overflow-hidden">
+            <img
+              src="/src/assets/images/news1.jpg"
+              alt="زيارة كريمة"
+              class="h-52 w-full object-cover"
+            />
+            <div class="p-5">
+              <h3 class="heading-5">
+                توقيع اتفاقية تدريب وتأهيل الأيتام لسوق العمل بحضور معالي وزير
+                الاتصالات.
+              </h3>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-gray-400"
+                >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+              ></a>
+            </div>
+          </article>
+
+          <article
+            data-aos="fade-up"
+            data-aos-delay="120"
+            class="main-card overflow-hidden"
+          >
+            <img
+              src="/src/assets/images/news2.jpg"
+              alt="زيارة كريمة"
+              class="h-52 w-full object-cover"
+            />
+            <div class="p-5">
+              <h3 class="heading-5">
+                زيارة معالي وزير الصحة لتفقد مبادرات الرعاية الطبية الشاملة
+                للأيتام.
+              </h3>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-gray-400"
+                >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+              ></a>
+            </div>
+          </article>
+
+          <article
+            data-aos="fade-up"
+            data-aos-delay="240"
+            class="main-card overflow-hidden"
+          >
+            <img
+              src="/src/assets/images/news1.jpg"
+              alt="زيارة كريمة"
+              class="h-52 w-full object-cover"
+            />
+            <div class="p-5">
+              <h3 class="heading-5">
+                زيارة صاحب السمو الملكي أمير منطقة الرياض لمقر الجمعية.
+              </h3>
+              <a
+                href="#"
+                class="mt-4 inline-block text-sm font-medium text-gray-400"
+                >تفاصيل أكثر <i class="fa-solid fa-angle-left"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="visits.html" class="outline-btn">
+            عرض الكل
+            <i class="fa-solid fa-angle-left"></i>
+          </a>
+        </div>
+      </section>
+
       <!-- ============== Associations by region (map) ============== -->
       <section class="mx-auto max-w-[1200px] px-4 py-16">
-        <div class="mb-10 text-center">
+        <div data-aos="fade-up" class="mb-10 text-center">
           <h2 class="heading-2">تصفّح الجمعيات في منطقتك</h2>
           <p class="mt-3 paragraph">
             اضغط على الخريطة لاستكشاف الجمعيات المتاحة في مدينتك والتعرّف على
@@ -317,6 +669,28 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           </p>
         </div>
         <div class="grid items-center gap-8 lg:grid-cols-2">
+          <!-- Region panel -->
+          <div
+            class="region-card relative rounded-3xl border border-base-300 bg-base-100 shadow-lg"
+          >
+            <!-- شارة المنطقة: مستطيل مدوّر يطفو أعلى الزاوية اليمنى -->
+            <span
+              id="region-name"
+              class="absolute -top-4 right-5 z-10 rounded-2xl bg-brand-navy px-6 py-3.5 text-base font-bold text-white shadow-lg"
+              >منطقة الرياض</span
+            >
+            <div class="px-6 pb-1 pt-5 text-left">
+              <a
+                href="associations.html"
+                class="text-sm font-medium text-gray-400 transition hover:text-brand-green"
+                >مشاهدة الكل <i class="fa-solid fa-angle-left text-xs"></i
+              ></a>
+            </div>
+            <ul
+              id="region-list"
+              class="divide-y divide-base-200 px-2 pb-2"
+            ></ul>
+          </div>
           <!-- Interactive map -->
           <div class="region-map-wrap">
             <svg
@@ -480,35 +854,13 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></path>
             </svg>
           </div>
-
-          <!-- Region panel -->
-          <div
-            class="region-card relative rounded-3xl border border-base-300 bg-base-100 shadow-lg"
-          >
-            <div class="flex items-center justify-between gap-3 p-4">
-              <span
-                id="region-name"
-                class="rounded-2xl bg-brand-navy px-4 py-2 text-sm font-semibold text-white"
-                >منطقة الرياض</span
-              >
-              <a
-                href="associations.html"
-                class="text-sm font-medium text-gray-400 transition hover:text-brand-green"
-                >مشاهدة الكل <i class="fa-solid fa-angle-left"></i
-              ></a>
-            </div>
-            <ul
-              id="region-list"
-              class="divide-y divide-base-200 px-2 pb-2"
-            ></ul>
-          </div>
         </div>
       </section>
 
       <!-- ============== Offers & discounts ============== -->
       <section>
         <div class="mx-auto max-w-[1200px] px-4 py-16">
-          <div class="mb-10 text-center">
+          <div data-aos="fade-up" class="mb-10 text-center">
             <h2 class="heading-2">العروض والخصومات المتاحة لك</h2>
             <p class="mt-3 paragraph">
               اختر العروض من المتاجر التجارية التي تجهها
@@ -516,7 +868,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           </div>
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <!-- Offer card -->
-            <div class="main-card p-4">
+            <div data-aos="fade-up" class="main-card p-4">
               <div class="flex items-stretch gap-4">
                 <div class="flex-1">
                   <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
@@ -538,7 +890,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
               </div>
             </div>
-            <div class="main-card p-4">
+            <div data-aos="fade-up" data-aos-delay="120" class="main-card p-4">
               <div class="flex items-stretch gap-4">
                 <div class="flex-1">
                   <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
@@ -560,7 +912,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
               </div>
             </div>
-            <div class="main-card p-4">
+            <div data-aos="fade-up" data-aos-delay="240" class="main-card p-4">
               <div class="flex items-stretch gap-4">
                 <div class="flex-1">
                   <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
@@ -582,7 +934,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
               </div>
             </div>
-            <div class="main-card p-4">
+            <div data-aos="fade-up" class="main-card p-4">
               <div class="flex items-stretch gap-4">
                 <div class="flex-1">
                   <h5 class="heading-5 mt-2">مطعم متنوّع</h5>
@@ -617,7 +969,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       <!-- ============== Events ============== -->
       <section class="gradient-bg m-3 rounded-2xl">
         <div class="mx-auto max-w-[1200px] px-4 py-16">
-          <div class="mb-10 text-center">
+          <div data-aos="fade-up" class="mb-10 text-center">
             <h2 class="heading-2">فعاليات الجمعيات</h2>
             <p class="mt-3 paragraph">
               اختر العروض من العلامات التجارية التي تحبها.
@@ -756,7 +1108,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </div>
 
             <!-- Event cards (static) -->
-            <article class="main-card overflow-hidden lg:order-2">
+            <article
+              data-aos="fade-up"
+              data-aos-delay="120"
+              class="main-card overflow-hidden lg:order-2"
+            >
               <img
                 src="/src/assets/images/news1.jpg"
                 alt="فعالية"
@@ -785,7 +1141,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 ></a>
               </div>
             </article>
-            <article class="main-card overflow-hidden lg:order-1">
+            <article
+              data-aos="fade-up"
+              data-aos-delay="240"
+              class="main-card overflow-hidden lg:order-1"
+            >
               <img
                 src="/src/assets/images/news2.jpg"
                 alt="فعالية"
@@ -821,7 +1181,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       <!-- ============== News ============== -->
       <section>
         <div class="mx-auto max-w-[1200px] px-4 py-16">
-          <div class="mb-10 text-center">
+          <div data-aos="fade-up" class="mb-10 text-center">
             <h2 class="heading-2">آخر الأخبار</h2>
             <p class="mt-3 paragraph">
               اطّلع على أحدث المستجدّات والأخبار المتعلّقة بمنصة أيتامنا
@@ -967,7 +1327,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       <!-- ============== Training courses ============== -->
       <section class="gradient-bg m-3 rounded-2xl">
         <div class="mx-auto max-w-[1200px] px-4 py-16">
-          <div class="mb-10 text-center">
+          <div data-aos="fade-up" class="mb-10 text-center">
             <h2 class="heading-2">الدورات التدريبية</h2>
             <p class="paragraph mt-3">
               اطّلع على الدورات والبرامج التدريبية والتوعوية المخصّصة للعاملين
@@ -975,7 +1335,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </p>
           </div>
           <div class="grid gap-6 md:grid-cols-3">
-            <article class="main-card overflow-hidden">
+            <article data-aos="fade-up" class="main-card overflow-hidden">
               <img
                 src="/src/assets/images/news2.jpg"
                 alt="دورة تدريبية"
@@ -1004,7 +1364,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 >
               </div>
             </article>
-            <article class="main-card overflow-hidden">
+            <article
+              data-aos="fade-up"
+              data-aos-delay="120"
+              class="main-card overflow-hidden"
+            >
               <img
                 src="/src/assets/images/news2.jpg"
                 alt="دورة تدريبية"
@@ -1033,7 +1397,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 >
               </div>
             </article>
-            <article class="main-card overflow-hidden">
+            <article
+              data-aos="fade-up"
+              data-aos-delay="240"
+              class="main-card overflow-hidden"
+            >
               <img
                 src="/src/assets/images/news2.jpg"
                 alt="دورة تدريبية"
@@ -1077,35 +1445,79 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </p>
           </div>
           <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-5">
-            <div class="flex flex-col items-center gap-2 number-card relative">
+            <div
+              data-aos="fade-up"
+              class="flex flex-col items-center gap-2 number-card relative"
+            >
               <img src="/src/assets/images/icon1.svg" />
-              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <h3
+                class="heading-3 font-black text-brand-navy m-0 stat-counter"
+                data-target="27561"
+              >
+                +0
+              </h3>
               <p class="paragraph text-sm font-medium m-0">
                 المستفيدين من برنامج التأهيل لسوق العمل
               </p>
             </div>
-            <div class="flex flex-col items-center gap-2 number-card relative">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="flex flex-col items-center gap-2 number-card relative"
+            >
               <img src="/src/assets/images/icon2.svg" />
-              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <h3
+                class="heading-3 font-black text-brand-navy m-0 stat-counter"
+                data-target="18420"
+              >
+                +0
+              </h3>
               <p class="paragraph text-sm font-medium m-0">
                 المستفيدين من الكفالة الصحية
               </p>
             </div>
-            <div class="flex flex-col items-center gap-2 number-card relative">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="flex flex-col items-center gap-2 number-card relative"
+            >
               <img src="/src/assets/images/icon3.svg" />
-              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <h3
+                class="heading-3 font-black text-brand-navy m-0 stat-counter"
+                data-target="12750"
+              >
+                +0
+              </h3>
               <p class="paragraph text-sm font-medium m-0">
                 المستفيدين من الدورات التطويرية
               </p>
             </div>
-            <div class="flex flex-col items-center gap-2 number-card relative">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="flex flex-col items-center gap-2 number-card relative"
+            >
               <img src="/src/assets/images/icon4.svg" />
-              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <h3
+                class="heading-3 font-black text-brand-navy m-0 stat-counter"
+                data-target="42300"
+              >
+                +0
+              </h3>
               <p class="paragraph text-sm font-medium m-0">يتيم ويتيمة</p>
             </div>
-            <div class="flex flex-col items-center gap-2 number-card relative">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              class="flex flex-col items-center gap-2 number-card relative"
+            >
               <img src="/src/assets/images/icon5.svg" />
-              <h3 class="heading-3 font-black text-brand-navy m-0">+27561</h3>
+              <h3
+                class="heading-3 font-black text-brand-navy m-0 stat-counter"
+                data-target="8965"
+              >
+                +0
+              </h3>
               <p class="paragraph text-sm font-medium m-0">متطوع ومتطوعة</p>
             </div>
           </div>
@@ -1116,29 +1528,35 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
       <section class="gradient-bg-2 m-3 rounded-2xl">
         <div class="mx-auto max-w-[1200px] px-4">
-          <div class="grid items-center gap-8 px-8 md:grid-cols-2 md:px-12">
-            <div class="text-white">
-              <h2 class="heading-2 text-white">
+          <div
+            class="grid grid-cols-1 items-center gap-8 px-6 py-10 md:grid-cols-2 md:py-0 md:px-12"
+          >
+            <div class="text-center text-white md:text-right">
+              <h2
+                class="text-xl font-extrabold leading-tight text-white md:text-3xl"
+              >
                 خدمة استشارية مرخّصة على يد مختصين
               </h2>
               <p class="mt-3 paragraph text-white/85 text-base">
                 خدمات نفسية واجتماعية بين يديك بسهولة وموثوقية عالية عبر تطبيق
                 أيتامنا.
               </p>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href="#" class="">
+              <div
+                class="mt-6 flex flex-wrap justify-center gap-3 md:justify-start"
+              >
+                <a href="#">
                   <img
                     src="/src/assets/images/google-app.svg"
                     alt="Google Play"
-                    class="h-12"
+                    class="h-11 sm:h-12"
                   />
                 </a>
 
-                <a href="#" class=""
+                <a href="#"
                   ><img
                     src="/src/assets/images/apple-app.svg"
-                    alt="Google Play"
-                    class="h-12"
+                    alt="App Store"
+                    class="h-11 sm:h-12"
                 /></a>
               </div>
             </div>
@@ -1146,7 +1564,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <img
                 src="/src/assets/images/phone-app.svg"
                 alt="تطبيق أيتامنا"
-                class="w-80 md:w-[400px]"
+                class="w-64 max-w-full sm:w-80 md:w-[400px]"
               />
             </div>
           </div>
@@ -1155,7 +1573,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
       <!-- ============== Articles ============== -->
       <section class="mx-auto max-w-[1200px] px-4 py-16">
-        <div class="mb-10 text-center">
+        <div data-aos="fade-up" class="mb-10 text-center">
           <h2 class="heading-2">مقالات أيتامنا</h2>
           <p class="mt-3 paragraph">
             مقالات ومحتوى معرفي يناقش قضايا رعاية الأيتام ويستعرض التجارب
@@ -1166,7 +1584,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
-                <article class="main-card overflow-hidden">
+                <article data-aos="fade-up" class="main-card overflow-hidden">
                   <img
                     src="/src/assets/images/news2.jpg"
                     alt="مقال"
@@ -1185,7 +1603,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </article>
               </li>
               <li class="splide__slide">
-                <article class="main-card overflow-hidden">
+                <article
+                  data-aos="fade-up"
+                  data-aos-delay="120"
+                  class="main-card overflow-hidden"
+                >
                   <img
                     src="/src/assets/images/news2.jpg"
                     alt="مقال"
@@ -1204,7 +1626,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </article>
               </li>
               <li class="splide__slide">
-                <article class="main-card overflow-hidden">
+                <article
+                  data-aos="fade-up"
+                  data-aos-delay="240"
+                  class="main-card overflow-hidden"
+                >
                   <img
                     src="/src/assets/images/news2.jpg"
                     alt="مقال"
@@ -1233,7 +1659,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
       <!-- ============== Associations directory ============== -->
       <section class="mx-auto max-w-[1200px] px-4 py-16">
-        <div class="mb-10 text-center">
+        <div data-aos="fade-up" class="mb-10 text-center">
           <h2 class="heading-2">دليل جمعيات الأيتام</h2>
           <p class="mt-3 paragraph">
             تصفّح دليل الجمعيات المعتمدة في رعاية الأيتام في مختلف مناطق المملكة
@@ -1426,6 +1852,16 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </div>
       </div>
     </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button
+      id="back-to-top"
+      class="back-to-top"
+      type="button"
+      aria-label="العودة إلى الأعلى"
+    >
+      <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script

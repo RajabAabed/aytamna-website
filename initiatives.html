@@ -119,6 +119,143 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </ul>
           </div>
 
+          <!-- المعرفة dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="knowledge-dropdown"
+              type="button"
+              class="dropdown-toggle header-link inline-flex items-center gap-1"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="المعرفة"
+            >
+              المعرفة
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="knowledge-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="research.html"
+                  >الأبحاث والدراسات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="blog.html"
+                  >المقالات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="associations-finder.html"
+                  >باحث الجمعيات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >إصدارات استراتيجية رشد</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="images.html"
+                  >مكتبة الصور والفيديوهات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="awards.html"
+                  >دليل جوائز التميز</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >اللوائح والسياسات</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- المعلومات dropdown -->
+          <div class="dropdown relative inline-flex">
+            <button
+              id="info-dropdown"
+              type="button"
+              class="dropdown-toggle header-link inline-flex items-center gap-1"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-label="المعلومات"
+            >
+              المعلومات
+              <svg
+                class="size-4 transition-transform dropdown-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-open:opacity-100 hidden min-w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-lg"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="info-dropdown"
+            >
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="associations.html"
+                  >دليل الجمعيات</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="donor.html"
+                  >دليل المانحين</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="news.html"
+                  >الأخبار</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item block rounded-lg px-3 py-2 text-sm text-brand-navy hover:bg-base-200"
+                  href="#"
+                  >مرصد خدمات الأيتام</a
+                >
+              </li>
+            </ul>
+          </div>
+
           <a href="initiatives.html" class="header-link is-active">المبادرات</a>
           <a href="associations.html" class="header-link">الجمعيات</a>
         </nav>
@@ -259,6 +396,125 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </ul>
             </details>
           </li>
+          <!-- المعرفة (collapsible) -->
+          <li>
+            <details class="group">
+              <summary
+                class="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-base-200"
+              >
+                المعرفة
+                <svg
+                  class="size-4 transition-transform group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <ul class="mt-1 space-y-1 ps-3">
+                <li>
+                  <a
+                    href="research.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >الأبحاث والدراسات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="blog.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >المقالات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="associations-finder.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >باحث الجمعيات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >إصدارات استراتيجية رشد</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="images.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >مكتبة الصور والفيديوهات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="awards.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >دليل جوائز التميز</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >اللوائح والسياسات</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
+          <!-- المعلومات (collapsible) -->
+          <li>
+            <details class="group">
+              <summary
+                class="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-base-200"
+              >
+                المعلومات
+                <svg
+                  class="size-4 transition-transform group-open:rotate-180"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <ul class="mt-1 space-y-1 ps-3">
+                <li>
+                  <a
+                    href="associations.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >دليل الجمعيات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="donor.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >دليل المانحين</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="news.html"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >الأخبار</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block rounded-lg px-3 py-2 text-sm text-gray-500 transition hover:bg-base-200 hover:text-brand-navy"
+                    >مرصد خدمات الأيتام</a
+                  >
+                </li>
+              </ul>
+            </details>
+          </li>
           <li>
             <a
               href="#"
@@ -350,7 +606,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <!-- Articles grid -->
         <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Card -->
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -379,7 +635,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="120" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -408,7 +664,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="240" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -437,7 +693,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -466,7 +722,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="120" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -495,7 +751,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="240" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -524,7 +780,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -553,7 +809,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="120" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -582,7 +838,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="240" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -611,7 +867,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -640,7 +896,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               ></a>
             </div>
           </article>
-          <article class="main-card overflow-hidden">
+          <article data-aos="fade-up" data-aos-delay="120" class="main-card overflow-hidden">
             <img
               src="/src/assets/images/news2.jpg"
               alt="مقال"
@@ -670,6 +926,44 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </div>
           </article>
         </div>
+        <!-- Pagination -->
+        <nav
+          class="mt-12 flex items-center justify-center gap-1.5 text-sm"
+          aria-label="ترقيم الصفحات"
+        >
+          <a
+            href="#"
+            class="flex size-9 items-center justify-center rounded-lg text-gray-400 transition hover:bg-base-200 hover:text-brand-navy"
+            aria-label="السابق"
+            ><i class="fa-solid fa-angle-right text-xs"></i
+          ></a>
+          <a
+            href="#"
+            class="flex h-9 min-w-9 items-center justify-center rounded-lg bg-brand-green px-2 font-semibold text-white"
+            >1</a
+          >
+          <a
+            href="#"
+            class="flex h-9 min-w-9 items-center justify-center rounded-lg px-2 font-medium text-brand-navy transition hover:bg-base-200"
+            >2</a
+          >
+          <a
+            href="#"
+            class="flex h-9 min-w-9 items-center justify-center rounded-lg px-2 font-medium text-brand-navy transition hover:bg-base-200"
+            >3</a
+          >
+          <a
+            href="#"
+            class="flex h-9 min-w-9 items-center justify-center rounded-lg px-2 font-medium text-brand-navy transition hover:bg-base-200"
+            >10</a
+          >
+          <a
+            href="#"
+            class="flex size-9 items-center justify-center rounded-lg text-gray-400 transition hover:bg-base-200 hover:text-brand-navy"
+            aria-label="التالي"
+            ><i class="fa-solid fa-angle-left text-xs"></i
+          ></a>
+        </nav>
       </section>
     </main>
 

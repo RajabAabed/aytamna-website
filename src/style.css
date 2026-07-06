@@ -99,6 +99,153 @@
     background: var(--color-base-100);
   }
 }
+/* ============================================================
+   تأثيرات تفاعلية و"واو" (خفيفة، تحترم تفضيل تقليل الحركة)
+   ============================================================ */
+
+/* شريط تقدّم القراءة أعلى الصفحة */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  z-index: 60;
+  transform: scaleX(0);
+  transform-origin: right center; /* يتقدّم من اليمين لليسار (RTL) */
+  background: var(--gradient-brand);
+  box-shadow: 0 1px 8px -1px rgba(68, 180, 219, 0.5);
+  will-change: transform;
+}
+
+/* زر العودة للأعلى */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  color: #fff;
+  background: var(--gradient-brand);
+  box-shadow: 0 10px 26px -8px rgba(33, 59, 88, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.85);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    visibility 0.3s;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+.back-to-top:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
+/* عنوان البطل بتدرّج متحرّك */
+.hero-title {
+  background: linear-gradient(100deg, #213b58 0%, #2f7fa8 30%, #213b58 60%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-shine 6s linear infinite;
+}
+@keyframes hero-shine {
+  to {
+    background-position: -220% center;
+  }
+}
+
+/* وهج يتبع المؤشر على البطاقات + إمالة خفيفة */
+.main-card {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.25s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.main-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    18rem 18rem at var(--mx) var(--my),
+    rgba(68, 180, 219, 0.14),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.main-card:hover {
+  box-shadow: 0 22px 45px -22px rgba(33, 59, 88, 0.35);
+}
+.main-card:hover::before {
+  opacity: 1;
+}
+/* حافظ على ظهور المحتوى فوق طبقة الوهج */
+.main-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* بطاقات الأرقام: قفزة خفيفة عند المرور + وميض الأيقونة */
+.number-card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.number-card:hover {
+  transform: translateY(-6px);
+}
+.number-card img {
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.4s ease;
+}
+.number-card:hover img {
+  transform: scale(1.12) rotate(-4deg);
+  filter: drop-shadow(0 8px 14px rgba(68, 180, 219, 0.4));
+}
+/* العدّاد: خط ثابت العرض حتى لا "يقفز" أثناء العدّ */
+.stat-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+/* احترام تفضيل تقليل الحركة: أوقف كل الأنيميشن المتكرّرة */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb,
+  .hero-title {
+    animation: none;
+  }
+  .scroll-progress,
+  .back-to-top,
+  .number-card,
+  .number-card img,
+  .main-card {
+    transition: none;
+  }
+  .hero-title {
+    color: var(--color-brand-navy);
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
 .gradient-bg {
   background:
     radial-gradient(
@@ -303,6 +450,7 @@
   justify-content: center;
   min-height: 3rem;
   padding: 0;
+  cursor: pointer;
 }
 #events-calendar .fc-daygrid-day-top {
   justify-content: center;
@@ -319,7 +467,13 @@
   color: var(--color-brand-navy);
   font-weight: 500;
   font-size: 0.9rem;
+  line-height: 1;
   text-decoration: none;
+}
+/* توسيط الرقم رأسياً داخل الخلية/الدائرة */
+#events-calendar .fc-daygrid-day-top {
+  align-items: center;
+  height: 100%;
 }
 #events-calendar .fc-daygrid-day-events,
 #events-calendar .fc-daygrid-day-bottom {
@@ -343,6 +497,11 @@
   border-radius: 9999px;
   background: var(--color-brand-green);
   opacity: 0.85;
+}
+/* إخفاء النقطة الخضراء لليوم المختار/المضغوط (خلفيته خضراء أصلاً) */
+#events-calendar .day-selected .fc-daygrid-day-number::after,
+#events-calendar .day-active .fc-daygrid-day-number::after {
+  display: none;
 }
 
 /* اليوم المحدد (به فعاليات): دائرة خضراء بتدرّج مع توهّج */
@@ -434,7 +593,7 @@
 }
 #sa-map .region.is-active {
   opacity: 1;
-  fill: var(--color-brand-green);
+  fill: #ffffff;
 }
 
 /* الأسئلة الشائعة: + عند الإغلاق و − عند الفتح */
@@ -587,7 +746,7 @@
     @apply bg-base-100 border border-brand-navy/15 rounded-3xl  transition-all duration-300;
   }
   .main-card:hover {
-    @apply border-brand-navy/40 transform scale-105;
+    @apply border-brand-navy/40;
   }
   .footer-link {
     @apply text-sm text-white/85 hover:text-white transition-colors duration-300;

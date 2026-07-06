@@ -1,5 +1,119 @@
 import "./style.css";
 import "flyonui/flyonui.js";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  duration: 650,
+  easing: "ease-out-cubic",
+  once: true,
+  offset: 60,
+  disableMutationObserver: false,
+});
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+
+const progressBar = document.getElementById("scroll-progress");
+if (progressBar) {
+  let ticking = false;
+  const updateProgress = () => {
+    const scrollable =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progressBar.style.transform = `scaleX(${Math.min(ratio, 1)})`;
+    ticking = false;
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
+  updateProgress();
+}
+
+const backToTop = document.getElementById("back-to-top");
+if (backToTop) {
+  const toggleBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 600);
+  };
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  });
+  toggleBackToTop();
+}
+
+const counters = document.querySelectorAll(".stat-counter");
+if (counters.length) {
+  const formatNum = (n) => n.toLocaleString("en-US");
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    if (prefersReducedMotion) {
+      el.textContent = "+" + formatNum(target);
+      return;
+    }
+    const duration = 1800;
+    let startTime = null;
+    const step = (timestamp) => {
+      if (startTime === null) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      el.textContent = "+" + formatNum(Math.round(target * eased));
+      if (progress < 1) window.requestAnimationFrame(step);
+    };
+    window.requestAnimationFrame(step);
+  };
+  const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 },
+  );
+  counters.forEach((el) => counterObserver.observe(el));
+}
+
+if (!prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
+  const tiltCards = document.querySelectorAll(".main-card");
+  tiltCards.forEach((card) => {
+    let rafId = null;
+    const onMove = (e) => {
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width;
+      const py = (e.clientY - rect.top) / rect.height;
+      card.style.setProperty("--mx", `${px * 100}%`);
+      card.style.setProperty("--my", `${py * 100}%`);
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(() => {
+        const rotY = (px - 0.5) * 6; // ميل أفقي خفيف
+        const rotX = (0.5 - py) * 6; // ميل رأسي خفيف
+        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
+        rafId = null;
+      });
+    };
+    const onLeave = () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      rafId = null;
+      card.style.transform = "";
+    };
+    card.addEventListener("mousemove", onMove);
+    card.addEventListener("mouseleave", onLeave);
+  });
+}
 
 if (document.querySelector(".splide")) {
   var splide = new Splide(".splide", {
@@ -19,7 +133,6 @@ if (document.querySelector(".splide")) {
   splide.mount();
 }
 
-// تأثير الهيدر عند التمرير: خلفية بلور + حد سفلي
 const siteHeader = document.getElementById("site-header");
 if (siteHeader) {
   const onScroll = () => {
@@ -29,7 +142,6 @@ if (siteHeader) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
-// قائمة الموبايل: فتح/إغلاق الـ drawer المنزلق
 const drawer = document.getElementById("mobile-drawer");
 const drawerOverlay = document.getElementById("drawer-overlay");
 const menuOpenBtn = document.getElementById("menu-open");
@@ -52,17 +164,14 @@ if (drawer && drawerOverlay) {
   if (menuOpenBtn) menuOpenBtn.addEventListener("click", openDrawer);
   if (menuCloseBtn) menuCloseBtn.addEventListener("click", closeDrawer);
   drawerOverlay.addEventListener("click", closeDrawer);
-  // إغلاق القائمة عند الضغط على أي رابط بداخلها
   drawer.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeDrawer);
   });
-  // إغلاق بزر Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeDrawer();
   });
 }
 
-// فلاتر الفعاليات: تحديث نص الزر عند اختيار عنصر من القائمة
 document.querySelectorAll(".dd-option").forEach((opt) => {
   opt.addEventListener("click", () => {
     const dd = opt.closest(".dropdown");
@@ -122,7 +231,7 @@ if (calendarEl && window.FullCalendar) {
     let left = cellCenterX - tip.offsetWidth / 2;
     left = Math.max(
       margin,
-      Math.min(left, calRect.width - tip.offsetWidth - margin)
+      Math.min(left, calRect.width - tip.offsetWidth - margin),
     );
     tip.style.left = `${left}px`;
     tip.style.top = `${cellTop - tip.offsetHeight - 10}px`;
@@ -166,7 +275,7 @@ if (calendarEl && window.FullCalendar) {
         .querySelectorAll(".day-selected, .day-active")
         .forEach((el) => el.classList.remove("day-selected", "day-active"));
       info.dayEl.classList.add(
-        dayEvents[info.dateStr] ? "day-selected" : "day-active"
+        dayEvents[info.dateStr] ? "day-selected" : "day-active",
       );
       // إظهار tooltip لليوم (فعالياته أو عدم وجودها)
       showTooltip(info.dayEl, info.dateStr);
@@ -177,7 +286,7 @@ if (calendarEl && window.FullCalendar) {
   // إظهار tooltip لليوم المحدد افتراضياً (بعد اكتمال التخطيط)
   requestAnimationFrame(() => {
     const initialCell = calendarEl.querySelector(
-      `.fc-daygrid-day[data-date="${selectedDay}"]`
+      `.fc-daygrid-day[data-date="${selectedDay}"]`,
     );
     if (initialCell) showTooltip(initialCell, selectedDay);
   });
@@ -188,7 +297,12 @@ const saMap = document.getElementById("sa-map");
 const regionNameEl = document.getElementById("region-name");
 const regionListEl = document.getElementById("region-list");
 if (saMap && regionNameEl && regionListEl) {
-  const regionLogo = "/src/assets/images/image 3.svg";
+  const logoPool = [
+    "image 3.svg",
+    "image 4.svg",
+    "image 5.svg",
+    "logo2.svg",
+  ].map((f) => "/src/assets/images/" + f);
   const regionsData = {
     SAU1097: {
       name: "منطقة الرياض",
@@ -276,16 +390,14 @@ if (saMap && regionNameEl && regionListEl) {
     } else {
       regionListEl.innerHTML = data.items
         .map(
-          (name) => `
-        <li class="flex items-center justify-between gap-3 px-3 py-4">
+          (name, i) => `
+        <li class="flex items-center justify-between gap-4 px-4 py-4">
           <div class="min-w-0">
-            <p class="truncate text-sm font-semibold text-brand-navy">${name}</p>
-            <a href="associations-details.html" class="text-xs text-gray-400 transition hover:text-brand-green">اقرأ المزيد <i class="fa-solid fa-angle-left"></i></a>
+            <p class="truncate text-sm font-bold text-brand-navy">${name}</p>
+            <a href="associations-details.html" class="mt-1.5 inline-flex items-center gap-1 text-xs text-gray-400 transition hover:text-brand-green">اقرأ المزيد <i class="fa-solid fa-angle-left text-[10px]"></i></a>
           </div>
-          <span class="flex h-12 w-16 shrink-0 items-center justify-center rounded-xl bg-base-200/60 p-1">
-            <img src="${regionLogo}" alt="" class="max-h-9 w-auto" />
-          </span>
-        </li>`
+          <img src="${logoPool[i % logoPool.length]}" alt="" class="h-11 w-auto max-w-[84px] shrink-0 object-contain" />
+        </li>`,
         )
         .join("");
     }
@@ -353,7 +465,8 @@ if (otpInputs.length) {
   const resendBtn = document.getElementById("otp-resend");
   if (timerEl && resendBtn) {
     let remaining = 57;
-    const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+    const fmt = (s) =>
+      `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
     const startTimer = () => {
       remaining = 57;
       timerEl.textContent = fmt(remaining);
