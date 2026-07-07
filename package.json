@@ -11,6 +11,8 @@
   "devDependencies": {
     "@iconify/json": "^2.2.488",
     "@iconify/tailwind4": "^1.2.3",
+    "sharp": "^0.35.3",
+    "svgo": "^4.0.1",
     "vite": "^8.0.12"
   },
   "dependencies": {

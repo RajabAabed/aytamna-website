@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# بعد تحديد النطاق النهائي أضِف السطر التالي (وأنشئ sitemap.xml):
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml

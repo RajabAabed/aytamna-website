@@ -5,12 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="description" content="سجّل جمعيتك في منصة أيتامنا للاستفادة من الخدمات والبرامج." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="منصة أيتامنا" />
+    <meta name="theme-color" content="#213b58" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="أيتامنا" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:title" content="إنشاء حساب جديد — أيتامنا" />
+    <meta property="og:description" content="سجّل جمعيتك في منصة أيتامنا للاستفادة من الخدمات والبرامج." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="إنشاء حساب جديد — أيتامنا" />
+    <meta name="twitter:description" content="سجّل جمعيتك في منصة أيتامنا للاستفادة من الخدمات والبرامج." />
     <title>إنشاء حساب جديد — أيتامنا</title>
   </head>
   <body class="bg-white">
@@ -20,7 +26,7 @@
         <div
           class="auth-gradient sticky top-3 flex h-[calc(100vh-1.5rem)] items-center justify-center rounded-3xl"
         >
-          <img
+          <img loading="lazy" decoding="async"
             src="/src/assets/images/logo-w.svg"
             alt="أيتامنا"
             class="w-48 lg:w-56"
@@ -33,7 +39,7 @@
         <div class="w-full max-w-md">
           <!-- شعار للموبايل فقط -->
           <a href="index.html" class="mb-10 block lg:hidden">
-            <img
+            <img loading="lazy" decoding="async"
               src="/src/assets/images/logo.svg"
               alt="أيتامنا"
               class="h-10 w-auto"
@@ -90,12 +96,6 @@
               <div
                 class="flex h-12 items-stretch overflow-hidden rounded-xl border border-base-300 bg-base-100 transition focus-within:border-brand-green focus-within:ring-2 focus-within:ring-brand-green/20"
               >
-                <span
-                  class="flex items-center gap-1.5 border-l border-base-300 bg-base-200/50 px-3 text-sm text-brand-navy"
-                >
-                  <span class="text-base leading-none">🇸🇦</span>
-                  <span dir="ltr">966+</span>
-                </span>
                 <input
                   id="phone"
                   type="tel"
@@ -103,6 +103,12 @@
                   placeholder="رقم الجوال"
                   class="w-full flex-1 bg-transparent px-4 text-sm text-brand-navy outline-none"
                 />
+                <span
+                  class="flex items-center gap-1.5 border-r border-base-300 bg-base-200/50 px-3 text-sm text-brand-navy"
+                >
+                  <span class="text-base leading-none">🇸🇦</span>
+                  <span dir="ltr">+966</span>
+                </span>
               </div>
             </div>
 
@@ -140,51 +146,28 @@
 
             <!-- نوع المستفيد -->
             <div>
-              <label class="mb-2 block text-sm font-medium text-brand-navy">
+              <label
+                for="beneficiary-type"
+                class="mb-2 block text-sm font-medium text-brand-navy"
+              >
                 نوع المستفيد
               </label>
-              <div class="dropdown relative inline-flex w-full">
-                <button
-                  type="button"
-                  class="dropdown-toggle inline-flex h-12 w-full items-center justify-between gap-3 rounded-xl border border-base-300 bg-base-100 px-4 text-sm text-gray-400 transition hover:border-brand-green"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
+              <div class="relative">
+                <select
+                  id="beneficiary-type"
+                  required
+                  class="h-12 w-full appearance-none rounded-xl border border-base-300 bg-base-100 px-4 pl-10 text-sm text-brand-navy outline-none transition hover:border-brand-green focus:border-brand-green focus:ring-2 focus:ring-brand-green/20"
                 >
-                  <span class="dd-label">نوع المستفيد</span>
-                  <i
-                    class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform dropdown-open:rotate-180"
-                  ></i>
-                </button>
-                <ul
-                  class="dropdown-menu dropdown-open:opacity-100 hidden w-full rounded-2xl border border-base-300 bg-base-100 p-2 shadow-lg"
-                  role="menu"
-                >
-                  <li>
-                    <button type="button" class="dropdown-item dd-option">
-                      يتيم
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item dd-option">
-                      أرملة
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item dd-option">
-                      جمعية
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item dd-option">
-                      جهة مانحة
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="dropdown-item dd-option">
-                      مهتم بالقطاع
-                    </button>
-                  </li>
-                </ul>
+                  <option value="" disabled selected hidden>نوع المستفيد</option>
+                  <option>يتيم</option>
+                  <option>أرملة</option>
+                  <option>جمعية</option>
+                  <option>جهة مانحة</option>
+                  <option>مهتم بالقطاع</option>
+                </select>
+                <i
+                  class="fa-solid fa-chevron-down pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-xs text-gray-400"
+                ></i>
               </div>
             </div>
 
@@ -240,7 +223,7 @@
 
             <button
               type="submit"
-              class="gradient-bg-2 mt-2 h-12 w-full rounded-xl font-medium text-white transition hover:opacity-95"
+              class="mt-2 h-12 w-full rounded-xl bg-brand-navy font-medium text-white transition hover:opacity-95"
             >
               انشاء الحساب
             </button>
@@ -259,7 +242,7 @@
       </div>
     </main>
 
-    <script
+    <script defer
       src="https://kit.fontawesome.com/c150b48bd0.js"
       crossorigin="anonymous"
     ></script>

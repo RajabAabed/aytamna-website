@@ -7,28 +7,28 @@
 
 @font-face {
   font-family: "PingAR";
-  src: url("./assets/fonts/PingAR/PingAR-Light.otf") format("opentype");
+  src: url("./assets/fonts/PingAR/PingAR-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "PingAR";
-  src: url("./assets/fonts/PingAR/PingAR-Regular.otf") format("opentype");
+  src: url("./assets/fonts/PingAR/PingAR-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "PingAR";
-  src: url("./assets/fonts/PingAR/PingAR-Medium.otf") format("opentype");
+  src: url("./assets/fonts/PingAR/PingAR-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "PingAR";
-  src: url("./assets/fonts/PingAR/PingAR-Bold.otf") format("opentype");
+  src: url("./assets/fonts/PingAR/PingAR-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: "PingAR";
-  src: url("./assets/fonts/PingAR/PingAR-Heavy.otf") format("opentype");
+  src: url("./assets/fonts/PingAR/PingAR-Heavy.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -99,6 +99,29 @@
     background: var(--color-base-100);
   }
 }
+/* ============================================================
+   شبكة أمان للتجاوب: منع التمرير الأفقي + وسائط مرنة على كل الشاشات
+   ============================================================ */
+body {
+  overflow-x: clip; /* لا يظهر تمرير أفقي مهما فاض عنصر */
+}
+img,
+svg,
+video,
+canvas {
+  max-width: 100%; /* وسائط لا تتجاوز عرض حاويتها */
+}
+img:not([class*="h-"]):not([width]) {
+  height: auto; /* حفظ النسبة عند غياب ارتفاع صريح */
+}
+/* قائمة select: النص الإرشادي رمادي، والقيمة المختارة بلون النص الأساسي */
+select:required:invalid {
+  color: #9ca3af;
+}
+select option {
+  color: var(--color-brand-navy);
+}
+
 /* ============================================================
    تأثيرات تفاعلية و"واو" (خفيفة، تحترم تفضيل تقليل الحركة)
    ============================================================ */
