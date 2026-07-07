@@ -206,15 +206,20 @@ a:hover .fa-angle-left {
 }
 
 /* حلقة تركيز أنيقة لإمكانية الوصول */
+/* حلقة تركيز للوصولية — للروابط والأزرار فقط.
+   الحقول (input/select/textarea) لها تركيز أخضر خاص، فلا نضيف لها الأزرق */
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--color-brand-sky);
   outline-offset: 2px;
   border-radius: 6px;
+}
+/* إلغاء أي حلقة تركيز افتراضية على الحقول (تبقى الحدود الخضراء الخاصة بها فقط) */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
 }
 
 /* حركة ظهور تلقائية (تُفعّل عبر JS بإضافة .js-reveal، فلا يختفي المحتوى إن تعطّل JS) */
