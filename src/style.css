@@ -487,8 +487,8 @@ summary:focus-visible {
 .fixed-header.is-scrolled {
   /* زجاج مثلج: خلفية خفيفة جداً + بلور قوي مع رفع التشبّع لإحساس أنقى */
   background-color: rgba(255, 255, 255, 0.55);
+  /* نكتب القياسية فقط ونترك Lightning CSS يضيف بادئة -webkit- تلقائياً */
   backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 30px -12px rgba(33, 59, 88, 0.18);
 }
