@@ -206,6 +206,80 @@ a:hover .fa-angle-left {
 }
 
 /* حلقة تركيز أنيقة لإمكانية الوصول */
+/* ============================================================
+   أسهم تنقّل سلايدر المقالات (Splide) — أسفل السلايدر بشكل دائري أنيق
+   ============================================================ */
+.splide .splide__arrows {
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.splide .splide__arrow {
+  /* إلغاء التموضع المطلق الافتراضي حتى لا تغطي الكروت */
+  position: static;
+  transform: none;
+  inset: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid var(--color-base-300);
+  color: var(--color-brand-navy);
+  opacity: 1;
+  box-shadow: 0 6px 16px -10px rgba(33, 59, 88, 0.45);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+.splide .splide__arrow i {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+/* نُخفي أيقونة Splide الافتراضية إن وُجدت (نستخدم أيقوناتنا) */
+.splide .splide__arrow svg {
+  display: none;
+}
+.splide .splide__arrow:hover:not(:disabled) {
+  background: var(--gradient-brand);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.splide .splide__arrow:active:not(:disabled) {
+  transform: translateY(0) scale(0.95);
+}
+.splide .splide__arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   قسم "آخر الأخبار": يتكيّف مع أي عدد أخبار (1 إلى 4) دون كسر التصميم
+   ============================================================ */
+/* الكروت الجانبية تتوزّع بالتساوي، لكن بحد أدنى/أقصى حتى لا تتضخّم
+   عندما يكون العدد أقل من ثلاثة */
+.news-side-card {
+  flex: 1 1 0%;
+  min-height: 130px;
+  max-height: 175px;
+}
+/* إن لم يوجد أي خبر جانبي: أخفِ العمود واجعل الخبر الرئيسي بعرض كامل */
+.news-grid:not(:has(> .news-list > *)) > .news-list {
+  display: none;
+}
+.news-grid:not(:has(> .news-list > *)) > .news-featured {
+  grid-column: 1 / -1;
+}
+
 /* حلقة تركيز للوصولية — للروابط والأزرار فقط.
    الحقول (input/select/textarea) لها تركيز أخضر خاص، فلا نضيف لها الأزرق */
 a:focus-visible,
@@ -502,6 +576,28 @@ textarea:focus-visible {
   padding-top: 0;
 }
 
+/* القوائم المنسدلة: تمرير داخلي عند كثرة الخيارات بدل التمدّد بلا حدود */
+.dropdown-menu {
+  max-height: 18rem;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* لا يمتد التمرير للصفحة عند النهاية */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(33, 59, 88, 0.25) transparent;
+}
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(33, 59, 88, 0.25);
+  border-radius: 9999px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green);
+}
+
 /* عناصر قوائم فلاتر الفعاليات */
 .dd-option {
   display: block;
@@ -769,6 +865,32 @@ textarea:focus-visible {
   );
   mask: radial-gradient(circle at top left, transparent 1.4rem, #000 1.41rem);
   transform: rotate(270deg);
+}
+
+/* قائمة جمعيات المنطقة: تعرض ~5 جمعيات ثم يبدأ التمرير */
+#region-list {
+  max-height: 24rem; /* ≈ ارتفاع 5 عناصر */
+  overflow-y: auto;
+  overscroll-behavior: contain; /* يمنع تمرير الصفحة عند نهاية القائمة */
+  /* نُبعد القائمة عن حواف البطاقة حتى لا يلتصق شريط التمرير بالحد المدوّر */
+  margin-inline: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(33, 59, 88, 0.25) transparent;
+}
+#region-list::-webkit-scrollbar {
+  width: 6px;
+}
+#region-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#region-list::-webkit-scrollbar-thumb {
+  background: rgba(33, 59, 88, 0.25);
+  border-radius: 9999px;
+}
+#region-list::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green);
 }
 
 /* الخريطة التفاعلية لمناطق المملكة */

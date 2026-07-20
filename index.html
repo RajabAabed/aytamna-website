@@ -1101,9 +1101,13 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           </div>
 
           <div class="mx-auto max-w-7xl p-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div
+              class="news-grid grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch"
+            >
               <!-- LEFT BIG CARD -->
-              <div class="flex flex-col main-card overflow-hidden h-full">
+              <div
+                class="news-featured flex flex-col main-card overflow-hidden h-full"
+              >
                 <div class="w-full">
                   <img
                     loading="lazy"
@@ -1144,9 +1148,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </div>
 
               <!-- RIGHT LIST -->
-              <div class="flex flex-col gap-4 h-full">
+              <div class="news-list flex flex-col gap-4 h-full">
                 <!-- CARD -->
-                <div class="flex main-card overflow-hidden flex-1">
+                <div class="news-side-card flex main-card overflow-hidden">
                   <img
                     loading="lazy"
                     decoding="async"
@@ -1177,7 +1181,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
 
                 <!-- CARD -->
-                <div class="flex main-card overflow-hidden flex-1">
+                <div class="news-side-card flex main-card overflow-hidden">
                   <img
                     loading="lazy"
                     decoding="async"
@@ -1208,7 +1212,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 </div>
 
                 <!-- CARD -->
-                <div class="flex main-card overflow-hidden flex-1">
+                <div class="news-side-card flex main-card overflow-hidden">
                   <img
                     loading="lazy"
                     decoding="async"
@@ -1731,8 +1735,18 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </ul>
           </div>
           <div class="splide__arrows">
-            <button class="splide__arrow splide__arrow--prev">Prev</button>
-            <button class="splide__arrow splide__arrow--next">Next</button>
+            <button
+              class="splide__arrow splide__arrow--prev"
+              aria-label="المقال السابق"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+            <button
+              class="splide__arrow splide__arrow--next"
+              aria-label="المقال التالي"
+            >
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
           </div>
         </div>
       </section>

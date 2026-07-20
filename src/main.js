@@ -149,7 +149,8 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
         el.classList.add("is-revealed");
         obs.unobserve(el);
         // بعد انتهاء الحركة نُزيل أصناف الظهور لتعود البطاقة لانتقالها الطبيعي (التفاعل مع المؤشر)
-        const delay = parseFloat(el.style.getPropertyValue("--reveal-delay")) || 0;
+        const delay =
+          parseFloat(el.style.getPropertyValue("--reveal-delay")) || 0;
         window.setTimeout(() => {
           el.classList.remove("js-reveal", "is-revealed");
           el.style.removeProperty("--reveal-delay");
@@ -157,10 +158,11 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
         }, 700 + delay);
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
   );
   const prep = (el, delay) => {
-    if (el.hasAttribute("data-aos") || el.classList.contains("js-reveal")) return;
+    if (el.hasAttribute("data-aos") || el.classList.contains("js-reveal"))
+      return;
     if (isInView(el)) return;
     if (delay) el.style.setProperty("--reveal-delay", `${delay}ms`);
     el.classList.add("js-reveal");
@@ -173,7 +175,7 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
   // البطاقات مع تدرّج زمني داخل كل شبكة
   document.querySelectorAll("main .main-card").forEach((card) => {
     const sibs = [...card.parentElement.children].filter((c) =>
-      c.classList.contains("main-card")
+      c.classList.contains("main-card"),
     );
     const i = Math.max(0, sibs.indexOf(card));
     prep(card, (i % 4) * 90);
@@ -188,7 +190,7 @@ if (document.querySelector(".splide")) {
     direction: "rtl",
     gap: "1.5rem",
     pagination: false,
-    arrows: false,
+    arrows: true,
     breakpoints: {
       1024: { perPage: 2 },
       640: { perPage: 1, gap: "1rem", focus: 0 },
